@@ -1,4 +1,0 @@
-/home/nodog/Downloads/ndk-samples-master/native-activity/app/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/rebuild_cache.dir
-/home/nodog/Downloads/ndk-samples-master/native-activity/app/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/edit_cache.dir
-/home/nodog/Downloads/ndk-samples-master/native-activity/app/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/native-activity.dir
-/home/nodog/Downloads/ndk-samples-master/native-activity/app/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/native_app_glue.dir

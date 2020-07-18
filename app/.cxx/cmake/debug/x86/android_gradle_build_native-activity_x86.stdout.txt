@@ -1,3 +1,0 @@
-ninja: Entering directory `/home/nodog/Downloads/ndk-samples-master/native-activity/app/.cxx/cmake/debug/x86'
-[1/2] Building CXX object CMakeFiles/native-activity.dir/main.cpp.o
-[2/2] Linking CXX shared library /home/nodog/Downloads/ndk-samples-master/native-activity/app/build/intermediates/cmake/debug/obj/x86/libnative-activity.so

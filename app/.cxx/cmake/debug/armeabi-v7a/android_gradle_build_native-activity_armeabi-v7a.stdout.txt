@@ -1,3 +1,0 @@
-ninja: Entering directory `/home/nodog/Downloads/ndk-samples-master/native-activity/app/.cxx/cmake/debug/armeabi-v7a'
-[1/2] Building CXX object CMakeFiles/native-activity.dir/main.cpp.o
-[2/2] Linking CXX shared library /home/nodog/Downloads/ndk-samples-master/native-activity/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-activity.so
