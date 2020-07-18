@@ -1,0 +1,66 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<!-- BEGIN_INCLUDE(manifest) -->
+3<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+4    package="com.example.native_activity"
+5    android:versionCode="1"
+6    android:versionName="1.0" >
+7
+8    <uses-sdk
+9        android:minSdkVersion="14"
+9-->/home/nodog/Downloads/ndk-samples-master/native-activity/app/src/main/AndroidManifest.xml
+10        android:targetSdkVersion="28" />
+10-->/home/nodog/Downloads/ndk-samples-master/native-activity/app/src/main/AndroidManifest.xml
+11
+12    <!-- This .apk has no Java code itself, so set hasCode to false. -->
+13    <application
+13-->/home/nodog/Downloads/ndk-samples-master/native-activity/app/src/main/AndroidManifest.xml:9:3-29:17
+14        android:allowBackup="false"
+14-->/home/nodog/Downloads/ndk-samples-master/native-activity/app/src/main/AndroidManifest.xml:10:7-34
+15        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+15-->[androidx.core:core:1.0.1] /home/nodog/.gradle/caches/transforms-2/files-2.1/21dadf335ac8035a991bc5e1b16c722a/core-1.0.1/AndroidManifest.xml:22:18-86
+16        android:debuggable="true"
+17        android:fullBackupContent="false"
+17-->/home/nodog/Downloads/ndk-samples-master/native-activity/app/src/main/AndroidManifest.xml:11:7-40
+18        android:hasCode="false"
+18-->/home/nodog/Downloads/ndk-samples-master/native-activity/app/src/main/AndroidManifest.xml:14:7-30
+19        android:icon="@mipmap/ic_launcher"
+19-->/home/nodog/Downloads/ndk-samples-master/native-activity/app/src/main/AndroidManifest.xml:12:7-41
+20        android:label="@string/app_name"
+20-->/home/nodog/Downloads/ndk-samples-master/native-activity/app/src/main/AndroidManifest.xml:13:7-39
+21        android:testOnly="true" >
+22
+23        <!--
+24         Our activity is the built-in NativeActivity framework class.
+25         This will take care of integrating with our NDK code.
+26        -->
+27        <activity
+27-->/home/nodog/Downloads/ndk-samples-master/native-activity/app/src/main/AndroidManifest.xml:18:5-28:16
+28            android:name="android.app.NativeActivity"
+28-->/home/nodog/Downloads/ndk-samples-master/native-activity/app/src/main/AndroidManifest.xml:18:15-56
+29            android:configChanges="orientation|keyboardHidden"
+29-->/home/nodog/Downloads/ndk-samples-master/native-activity/app/src/main/AndroidManifest.xml:20:15-65
+30            android:label="@string/app_name" >
+30-->/home/nodog/Downloads/ndk-samples-master/native-activity/app/src/main/AndroidManifest.xml:19:15-47
+31
+32            <!-- Tell NativeActivity the name of our .so -->
+33            <meta-data
+33-->/home/nodog/Downloads/ndk-samples-master/native-activity/app/src/main/AndroidManifest.xml:22:7-23:52
+34                android:name="android.app.lib_name"
+34-->/home/nodog/Downloads/ndk-samples-master/native-activity/app/src/main/AndroidManifest.xml:22:18-53
+35                android:value="native-activity" />
+35-->/home/nodog/Downloads/ndk-samples-master/native-activity/app/src/main/AndroidManifest.xml:23:18-49
+36
+37            <intent-filter>
+37-->/home/nodog/Downloads/ndk-samples-master/native-activity/app/src/main/AndroidManifest.xml:24:7-27:23
+38                <action android:name="android.intent.action.MAIN" />
+38-->/home/nodog/Downloads/ndk-samples-master/native-activity/app/src/main/AndroidManifest.xml:25:9-61
+38-->/home/nodog/Downloads/ndk-samples-master/native-activity/app/src/main/AndroidManifest.xml:25:17-58
+39
+40                <category android:name="android.intent.category.LAUNCHER" />
+40-->/home/nodog/Downloads/ndk-samples-master/native-activity/app/src/main/AndroidManifest.xml:26:9-69
+40-->/home/nodog/Downloads/ndk-samples-master/native-activity/app/src/main/AndroidManifest.xml:26:19-66
+41            </intent-filter>
+42        </activity>
+43    </application>
+44
+45</manifest> <!-- END_INCLUDE(manifest) -->

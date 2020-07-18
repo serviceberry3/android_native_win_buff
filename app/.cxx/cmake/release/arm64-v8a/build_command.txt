@@ -1,0 +1,22 @@
+Executable : /home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/cmake
+arguments : 
+-H/home/nodog/Downloads/ndk-samples-master/native-activity/app/src/main/cpp
+-DCMAKE_FIND_ROOT_PATH=/home/nodog/Downloads/ndk-samples-master/native-activity/app/.cxx/cmake/release/prefab/arm64-v8a/prefab
+-DCMAKE_BUILD_TYPE=Release
+-DCMAKE_TOOLCHAIN_FILE=/home/nodog/Android/Sdk/ndk/21.2.6472646/build/cmake/android.toolchain.cmake
+-DANDROID_ABI=arm64-v8a
+-DANDROID_NDK=/home/nodog/Android/Sdk/ndk/21.2.6472646
+-DANDROID_PLATFORM=android-16
+-DCMAKE_ANDROID_ARCH_ABI=arm64-v8a
+-DCMAKE_ANDROID_NDK=/home/nodog/Android/Sdk/ndk/21.2.6472646
+-DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/home/nodog/Downloads/ndk-samples-master/native-activity/app/build/intermediates/cmake/release/obj/arm64-v8a
+-DCMAKE_MAKE_PROGRAM=/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja
+-DCMAKE_SYSTEM_NAME=Android
+-DCMAKE_SYSTEM_VERSION=16
+-DANDROID_STL=c++_static
+-B/home/nodog/Downloads/ndk-samples-master/native-activity/app/.cxx/cmake/release/arm64-v8a
+-GNinja
+jvmArgs : 
+
+Build command args:

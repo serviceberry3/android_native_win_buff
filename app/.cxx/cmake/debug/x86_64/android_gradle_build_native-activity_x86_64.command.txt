@@ -1,0 +1,7 @@
+Executable : /home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja
+arguments : 
+-C
+/home/nodog/Downloads/ndk-samples-master/native-activity/app/.cxx/cmake/debug/x86_64
+native-activity
+jvmArgs : 
+
