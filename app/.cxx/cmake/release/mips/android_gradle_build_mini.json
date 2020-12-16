@@ -1,0 +1,28 @@
+{
+  "buildFiles": [
+    "/home/nodog/VENV/opt/android-ndk-r15c/build/cmake/android.toolchain.cmake",
+    "/home/nodog/docs/asp/android_native_win_buff/app/src/main/cpp/CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/release/mips\" clean"
+  ],
+  "buildTargetsCommand": "/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja  -C \"/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/release/mips\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "native-activity-Release-mips": {
+      "artifactName": "native-activity",
+      "buildCommand": "/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/release/mips\" native-activity",
+      "abi": "mips",
+      "output": "/home/nodog/docs/asp/android_native_win_buff/app/build/intermediates/cmake/release/obj/mips/libnative-activity.so",
+      "runtimeFiles": [
+        "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/mips/libc++.a"
+      ]
+    },
+    "native_app_glue-Release-mips": {
+      "artifactName": "native_app_glue",
+      "buildCommand": "/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/release/mips\" native_app_glue",
+      "abi": "mips",
+      "output": "/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/release/mips/libnative_app_glue.a",
+      "runtimeFiles": []
+    }
+  }
+}

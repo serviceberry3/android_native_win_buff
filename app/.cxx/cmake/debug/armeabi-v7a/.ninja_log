@@ -1,0 +1,9 @@
+# ninja log v5
+0	46	1607736063	CMakeFiles/native_app_glue.dir/home/nodog/Android/Sdk/ndk/21.2.6472646/sources/android/native_app_glue/android_native_app_glue.c.o	395eaff64fdc69e
+46	54	1607736063	libnative_app_glue.a	fef77de0112cffc3
+0	199	1607736063	CMakeFiles/native-activity.dir/Renderer.cpp.o	e824d9ba0c87b9ca
+1	49	1607736773	CMakeFiles/native_app_glue.dir/home/nodog/Android/Sdk/ndk/21.2.6472646/sources/android/native_app_glue/android_native_app_glue.c.o	395eaff64fdc69e
+49	59	1607736773	libnative_app_glue.a	fef77de0112cffc3
+0	199	1607736773	CMakeFiles/native-activity.dir/Renderer.cpp.o	e824d9ba0c87b9ca
+1	267	1607737090	CMakeFiles/native-activity.dir/main.cpp.o	7016b34ef1d2dd5c
+267	277	1607737090	/home/nodog/docs/asp/android_native_win_buff/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-activity.so	5b51466cd8b6e058

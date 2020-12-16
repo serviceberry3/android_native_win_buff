@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="native-activity/app" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/native-activity.iml" filepath="$PROJECT_DIR$/.idea/modules/native-activity.iml" group="native-activity" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android_native_win_buff.iml" filepath="$PROJECT_DIR$/.idea/modules/android_native_win_buff.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android_native_win_buff.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android_native_win_buff.app.iml" />
     </modules>
   </component>
 </project>

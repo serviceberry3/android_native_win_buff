@@ -1,0 +1,70 @@
+{
+  "stringTable": {
+    "0": "/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/debug/mips",
+    "1": "--target=mipsel-none-linux-android --gcc-toolchain=/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64 --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/sysroot -Dnative_activity_EXPORTS -I/home/nodog/VENV/opt/android-ndk-r15c/sources/android/native_app_glue -isystem /home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/include -isystem /home/nodog/VENV/opt/android-ndk-r15c/sources/android/support/include -isystem /home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++abi/include -isystem /home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/include -isystem /home/nodog/VENV/opt/android-ndk-r15c/sources/android/support/include -isystem /home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++abi/include -isystem /home/nodog/VENV/opt/android-ndk-r15c/sysroot/usr/include -isystem /home/nodog/VENV/opt/android-ndk-r15c/sysroot/usr/include/mipsel-linux-android -isystem /home/nodog/VENV/opt/android-ndk-r15c/sysroot/usr/include/mipsel-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mips32 -Wa,--noexecstack -Wformat -Werror=format-security -std=c++11 -std=gnu++11 -Wall -Werror -O0 -fno-limit-debug-info -fPIC",
+    "2": "--target=mipsel-none-linux-android --gcc-toolchain=/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64 --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/sysroot -isystem /home/nodog/VENV/opt/android-ndk-r15c/sysroot/usr/include -isystem /home/nodog/VENV/opt/android-ndk-r15c/sysroot/usr/include/mipsel-linux-android -isystem /home/nodog/VENV/opt/android-ndk-r15c/sysroot/usr/include/mipsel-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mips32 -Wa,--noexecstack -Wformat -Werror=format-security -O0 -fno-limit-debug-info"
+  },
+  "buildFiles": [
+    "/home/nodog/VENV/opt/android-ndk-r15c/build/cmake/android.toolchain.cmake",
+    "/home/nodog/docs/asp/android_native_win_buff/app/src/main/cpp/CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/debug/mips\" clean"
+  ],
+  "buildTargetsCommand": "/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja  -C \"/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/debug/mips\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "native-activity-Debug-mips": {
+      "buildCommand": "/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/debug/mips\" native-activity",
+      "buildType": "debug",
+      "toolchain": "1748819036",
+      "abi": "mips",
+      "artifactName": "native-activity",
+      "files": [
+        {
+          "src": "/home/nodog/docs/asp/android_native_win_buff/app/src/main/cpp/main.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/home/nodog/docs/asp/android_native_win_buff/app/src/main/cpp/Renderer.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [],
+      "output": "/home/nodog/docs/asp/android_native_win_buff/app/build/intermediates/cmake/debug/obj/mips/libnative-activity.so",
+      "runtimeFiles": [
+        "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/mips/libc++.a"
+      ]
+    },
+    "native_app_glue-Debug-mips": {
+      "buildCommand": "/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/debug/mips\" native_app_glue",
+      "buildType": "debug",
+      "toolchain": "1748819036",
+      "abi": "mips",
+      "artifactName": "native_app_glue",
+      "files": [
+        {
+          "src": "/home/nodog/VENV/opt/android-ndk-r15c/sources/android/native_app_glue/android_native_app_glue.c",
+          "flagsOrdinal": 2,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [],
+      "output": "/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/debug/mips/libnative_app_glue.a",
+      "runtimeFiles": []
+    }
+  },
+  "toolchains": {
+    "1748819036": {
+      "cCompilerExecutable": "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang",
+      "cppCompilerExecutable": "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++"
+    }
+  },
+  "cFileExtensions": [
+    "c"
+  ],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

@@ -1,4 +1,4 @@
-#Fri Jul 17 21:35:40 EDT 2020
-base.0=/home/nodog/Downloads/ndk-samples-master/native-activity/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
+#Tue Dec 15 23:47:56 EST 2020
+base.0=/home/nodog/docs/asp/android_native_win_buff/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

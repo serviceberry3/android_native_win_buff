@@ -64,8 +64,12 @@ struct saved_state {
 
 
 int frameNum = 0;
-android_native_rect_t test_rect {300, 4000, 1200, 6000};
+//android_native_rect_t test_rect {300, 4000, 1200, 6000};
 int dir = 0;
+
+
+int oscillator = 0;
+window_pixel_t* large_buff; //2462400
 
 //Layer is the most important unit of composition. A layer is a combination of a surface and an instance of SurfaceControl
 
@@ -78,35 +82,45 @@ static inline window_pixel_t * buffer_first_pixel_of_next_line
 }
 */
 
+/*
 static inline uint_fast32_t pixel_colors_next (uint_fast32_t current_index)
 {
     return (rand() & PIXEL_COLORS_MAX_MASK);
-}
+}*/
 
 static void fill_pixels(ANativeWindow_Buffer* buffer)
 {
 
+    LOGI("Mem address of large_buff is %p", large_buff);
+
     //create array of 4 16-bit unsigned ints (will always be same value)
     static color_16bits_t const pixel_colors[PIXEL_COLORS_MAX] = {
-            make565(255,  0,  0), //0b1111100000000000,
-            make565(  0,255,  0),
-            make565(  0,  0,255),
+            make565(255,  0,  0), //0b1111100000000000,  //pure red
+            make565(  0,255,  0), //pure green
+            make565(  0,  0,255), //pure blue
             make565(255,255,  0)
     };
+
+
+    //**NOTE: each pixel takes up 2 bytes in memory, so we need a memory array of 2 * 1080 * 2280
 
 
     //Current pixel colors index
 
     //p_c is a result of bitwise AND of random integer with 0b11 (the max index). In other words, pick a random index into pixel_colors
-    uint_fast32_t p_c = rand() & PIXEL_COLORS_MAX_MASK;
+    //uint_fast32_t p_c = rand() & PIXEL_COLORS_MAX_MASK;
 
     color_16bits_t current_pixel_color;
 
+
     //pointer to buffer of uint16_t
-    auto * current_pixel = (window_pixel_t *)buffer->bits;
+    auto* current_pixel = (window_pixel_t *)buffer->bits;
+
+    LOGI("current_pixel (or initial buffer->bits) address is %p", current_pixel);
+
 
     //number of pixels per line
-    uint_fast32_t const line_width  = buffer->width;
+    uint_fast32_t const line_width = buffer->width;
 
     //stride
     uint_fast32_t const line_stride = buffer->stride;
@@ -114,8 +128,44 @@ static void fill_pixels(ANativeWindow_Buffer* buffer)
     //number of pixel lines we have available
     uint_fast32_t n_lines = buffer->height;
 
+
+
+    LOGI("Num lines is %d, width of lines is %d, stride is %d", (int)n_lines, (int)line_width, (int)line_stride);
+
+    //halfway into screen
+    int index = 1231300;
+
+
+    for (int i = 0; i < 300; i++) {
+        //set this window_pixel_t to 0
+
+        for (int j = 0; j < 300; j++) {
+            large_buff[index++] = pixel_colors[0];
+        }
+
+        //amount to add if we're drawing a square should be (width of screen in pxls - 300 + 8)
+        index += 788;
+    }
+
+
+    //EXPERIMENTAL: DOESN'T WORK.
+
+    //Right off, I've noticed something interesting about this. Above, we set current_pixel to point to the address of buffer->bits. So now when we set buffer->bits to point
+    //to large_buff, current_pixel remains at the original address of buffer->bits, while buffer->bits address does change to the address of large_buff (I checked this with the
+    //logging). So in the while loop below, we're writing pixels at the original address of buffer->bits. And although we've supposedly changed the address of buffer->bits
+    //to point to large_buff, that doesn't hold up once ANativeWindow_unlockAndPost() is called: what we see posted to the display queue is still what's written in the while loop
+    //below.
+
+    //So in conclusion, apparently we can't just set buffer.bits to some mem we allocated on the heap in this app. That doesn't do anything once the ANativeWindow
+    //is pushed to the display. We need to do some diggin in the Android source to find a way to actually set that pointer. Then we could render even faster by having all the
+    //pixels pre-rendered and just modifying the address.
+    buffer->bits = large_buff;
+
+    LOGI("After setting buffer->bits = large_buff, current_pixel address is now %p, and buffer->bits is %p", current_pixel, buffer->bits);
+
+
     //stops when n_lines is at 0 (have iterated through every line
-    while (n_lines--) {
+    while (n_lines--) { //starts at 2280
         //pointer to start of the current pixel line (starts at beginning of buffer->bits)
         window_pixel_t const* current_line_start = current_pixel;
 
@@ -128,28 +178,65 @@ static void fill_pixels(ANativeWindow_Buffer* buffer)
         //CHANGED to always pick red for now
         current_pixel_color = pixel_colors[0];
 
+/*
+        if (n_lines >= 1000 && n_lines <= 1300) {
+            while (((uintptr_t) current_pixel <= (uintptr_t) last_pixel_of_the_line - 800)) {
+                if ((uintptr_t) current_pixel >= (uintptr_t) current_line_start + 800) {
+                    *current_pixel = current_pixel_color;
+                }
+                current_pixel++;
+            }
+        }*/
+
+
         if (n_lines % 20==0) {
-            //write all pixels in the line
-            while ((uintptr_t)current_pixel <= (uintptr_t)last_pixel_of_the_line-1080) {
+            //write first 1080 bytes in the line (5040 pixels)
+            while ((uintptr_t)current_pixel <= (uintptr_t)last_pixel_of_the_line - 1080) {
                 *current_pixel = current_pixel_color;
+
+                //since current_pixel is an uint16_t ptr (2 bytes), this advances the read by 2 bytes
                 current_pixel++;
             }
 
             //switch over to green about halfway across screen
             current_pixel_color = pixel_colors[1];
 
+            //write second 1080 bytes in the line (5040 pixels)
             while ((uintptr_t)current_pixel <= (uintptr_t)last_pixel_of_the_line) {
                 *current_pixel = current_pixel_color;
+
+                //since current_pixel is an uint16_t ptr (2 bytes), this advances the read by 2 bytes
                 current_pixel++;
             }
         }
 
-        //change the random index (color selector)
-        p_c = pixel_colors_next(p_c);
 
-        //move to next pixel line
+        //change the random index (color selector)
+        //p_c = pixel_colors_next(p_c);
+
+        //move to next pixel line. Unsigned short is 2 bytes, line_stride is 1088. Since current_line_start is uin16_t ptr, adding 1088 advances the read by 1088*2 bytes,
+        //bringing us to the first pixel in the next line
         current_pixel = (unsigned short *) (current_line_start + (line_stride));
     }
+
+
+    //copy our pixels from large_buff over to the bits of the window
+    memcpy(buffer->bits, large_buff + oscillator, sizeof(window_pixel_t) * 1080 * 2280);
+
+    if (dir == 0) {
+        oscillator += 50;
+    }
+    else {
+        oscillator -= 50;
+    }
+
+    if (oscillator == 750 && dir==0) {
+        dir = 1;
+    }
+    else if (oscillator==0 && dir==1) {
+        dir = 0;
+    }
+
 }
 
 /**
@@ -369,7 +456,6 @@ static int engine_init_display(struct engine* engine) {
 */
 
 
-
 //draw a frame
 static void engine_draw_frame(struct engine* engine) {
     /*
@@ -417,23 +503,32 @@ static void engine_draw_frame(struct engine* engine) {
     eglSwapBuffers(engine->display, engine->surface);
      */
 
-
+    //ANativeWindow_Buffer in which to store the current frame's bits buffer
     ANativeWindow_Buffer buffer;
 
+    //make sure we have a window
     if (!engine_have_a_window(engine))
     {
-        LOGI( "The engine doesn't have a window !?\n");
+        LOGI("The engine doesn't have a window !?\n");
+
+        //abort
         goto draw_frame_end;
     }
 
-
-    if (ANativeWindow_lock(engine->app->window, &buffer, NULL) < 0)
+    //make sure we can lock this ANativeWindow_Buffer so that we can edit pixels
+    if (ANativeWindow_lock(engine->app->window, &buffer, nullptr) < 0)
     {
         LOGI("Could not lock the window... :C\n");
+
+        //abort
         goto draw_frame_end;
     }
 
+
+    //fill the raw bits buffer
     fill_pixels(&buffer);
+
+    //release the lock on our window's buffer and post the window to the screen
     ANativeWindow_unlockAndPost(engine->app->window);
 
     //LOGI("Frame number %d", frameNum);
@@ -484,8 +579,7 @@ static int32_t engine_handle_input(struct android_app* app, AInputEvent* event) 
     return 0;
      */
 
-    auto * const engine =
-            (struct engine *) app->userData;
+    auto* const engine = (struct engine *) app->userData;
 
     int32_t const current_event_type =
             AInputEvent_getType(event);
@@ -493,7 +587,9 @@ static int32_t engine_handle_input(struct android_app* app, AInputEvent* event) 
     if (current_event_type == AINPUT_EVENT_TYPE_MOTION) {
         engine->animating = 1;
         return 1;
-    } else if (current_event_type == AINPUT_EVENT_TYPE_KEY) {
+    }
+
+    else if (current_event_type == AINPUT_EVENT_TYPE_KEY) {
         LOGI("Key event: action=%d keyCode=%d metaState=0x%x",
             AKeyEvent_getAction(event),
             AKeyEvent_getKeyCode(event),
@@ -574,14 +670,14 @@ static void engine_handle_cmd(struct android_app* app, int32_t cmd) {
             if (engine_have_a_window(engine))
             {
 
-                engine->initial_window_format =
-                        ANativeWindow_getFormat(app->window);
+                engine->initial_window_format = ANativeWindow_getFormat(app->window);
 
                 ANativeWindow_setBuffersGeometry(app->window,
                                                  ANativeWindow_getWidth(app->window),
                                                  ANativeWindow_getHeight(app->window),
                                                  WINDOW_FORMAT_RGB_565);
 
+                LOGI("engine_draw_frame for init_window");
                 engine_draw_frame(engine);
             }
             break;
@@ -640,14 +736,16 @@ ASensorManager* AcquireASensorManagerInstance(android_app* app) {
   typedef ASensorManager *(*PF_GETINSTANCE)();
   auto getInstanceFunc = (PF_GETINSTANCE)
       dlsym(androidHandle, "ASensorManager_getInstance");
-  // by all means at this point, ASensorManager_getInstance should be available
+
+
+  //By all means at this point, ASensorManager_getInstance should be available
   assert(getInstanceFunc);
   dlclose(androidHandle);
 
   return getInstanceFunc();
 }
 
-
+//************************MAIN FXN********************************************************************************
 /**
  * This is the main entry point of a native application that is using
  * android_native_app_glue.  It runs in its own thread, with its own
@@ -730,6 +828,12 @@ void android_main(struct android_app* state) {
     }
      */
 
+    //allocate memory on the heap for a window_pixel_t buffer 4x the size of screen
+    large_buff = (window_pixel_t *)malloc(sizeof(window_pixel_t) * 2280 * 1080 * 4);
+
+    //statically create the red square
+
+
     struct engine engine = {0};
 
     state->userData = &engine;
@@ -737,30 +841,27 @@ void android_main(struct android_app* state) {
     state->onInputEvent = engine_handle_input;
     engine.app = state;
 
-    // loop waiting for stuff to do.
+    //loop waiting for stuff to do.
 
-    while (1) {
+    while (true) {
         // Read all pending events.
         int ident;
         int events;
+
+
         struct android_poll_source* source;
 
         // If not animating, we will block forever waiting for events.
         // If animating, we loop until all events are read, then continue
         // to draw the next frame of animation.
-        while (
-                (ident=ALooper_pollAll(
-                        engine.animating ? 0 : -1,
-                        NULL, &events, (void **) &source))
-                >= 0)
+        while ((ident = ALooper_pollAll(engine.animating ? 0 : -1,NULL, &events, (void **) &source)) >= 0)
         {
-
-            // Process this event.
+            //Process this event.
             if (source != NULL) {
                 source->process(state, source);
             }
 
-            // Check if we are exiting.
+            //Check if we are exiting.
             if (state->destroyRequested != 0) {
                 LOGI("Engine thread destroy requested!");
                 engine_term_display(&engine);
@@ -769,8 +870,12 @@ void android_main(struct android_app* state) {
         }
 
         if (engine.animating) {
+            LOGI("Engine animating");
             engine_draw_frame(&engine);
         }
     }
 }
+
+//********************************************************END MAIN FXN**********************************************************
+
 //END_INCLUDE(all)

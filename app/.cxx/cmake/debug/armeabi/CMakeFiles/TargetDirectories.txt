@@ -1,0 +1,4 @@
+/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/debug/armeabi/CMakeFiles/rebuild_cache.dir
+/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/debug/armeabi/CMakeFiles/edit_cache.dir
+/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/debug/armeabi/CMakeFiles/native-activity.dir
+/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/debug/armeabi/CMakeFiles/native_app_glue.dir

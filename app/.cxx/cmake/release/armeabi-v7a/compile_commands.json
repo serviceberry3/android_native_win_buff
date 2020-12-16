@@ -1,0 +1,19 @@
+[
+{
+  "directory": "/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/release/armeabi-v7a",
+  "command": "/home/nodog/Android/Sdk/ndk/21.2.6472646/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=armv7-none-linux-androideabi16 --gcc-toolchain=/home/nodog/Android/Sdk/ndk/21.2.6472646/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/nodog/Android/Sdk/ndk/21.2.6472646/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Dnative_activity_EXPORTS -I/home/nodog/Android/Sdk/ndk/21.2.6472646/sources/android/native_app_glue  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -std=gnu++11 -Wall -Werror -Oz -DNDEBUG  -fPIC   -o CMakeFiles/native-activity.dir/main.cpp.o -c /home/nodog/docs/asp/android_native_win_buff/app/src/main/cpp/main.cpp",
+  "file": "/home/nodog/docs/asp/android_native_win_buff/app/src/main/cpp/main.cpp"
+},
+
+{
+  "directory": "/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/release/armeabi-v7a",
+  "command": "/home/nodog/Android/Sdk/ndk/21.2.6472646/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=armv7-none-linux-androideabi16 --gcc-toolchain=/home/nodog/Android/Sdk/ndk/21.2.6472646/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/nodog/Android/Sdk/ndk/21.2.6472646/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Dnative_activity_EXPORTS -I/home/nodog/Android/Sdk/ndk/21.2.6472646/sources/android/native_app_glue  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -std=gnu++11 -Wall -Werror -Oz -DNDEBUG  -fPIC   -o CMakeFiles/native-activity.dir/Renderer.cpp.o -c /home/nodog/docs/asp/android_native_win_buff/app/src/main/cpp/Renderer.cpp",
+  "file": "/home/nodog/docs/asp/android_native_win_buff/app/src/main/cpp/Renderer.cpp"
+},
+
+{
+  "directory": "/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/release/armeabi-v7a",
+  "command": "/home/nodog/Android/Sdk/ndk/21.2.6472646/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=armv7-none-linux-androideabi16 --gcc-toolchain=/home/nodog/Android/Sdk/ndk/21.2.6472646/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/nodog/Android/Sdk/ndk/21.2.6472646/toolchains/llvm/prebuilt/linux-x86_64/sysroot   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security  -Oz -DNDEBUG  -fPIC   -o CMakeFiles/native_app_glue.dir/home/nodog/Android/Sdk/ndk/21.2.6472646/sources/android/native_app_glue/android_native_app_glue.c.o   -c /home/nodog/Android/Sdk/ndk/21.2.6472646/sources/android/native_app_glue/android_native_app_glue.c",
+  "file": "/home/nodog/Android/Sdk/ndk/21.2.6472646/sources/android/native_app_glue/android_native_app_glue.c"
+}
+]

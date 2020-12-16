@@ -1,0 +1,3 @@
+ninja: Entering directory `/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/debug/arm64-v8a'
+[1/2] Building CXX object CMakeFiles/native-activity.dir/main.cpp.o
+[2/2] Linking CXX shared library /home/nodog/docs/asp/android_native_win_buff/app/build/intermediates/cmake/debug/obj/arm64-v8a/libnative-activity.so

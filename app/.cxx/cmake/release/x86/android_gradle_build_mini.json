@@ -1,0 +1,27 @@
+{
+  "buildFiles": [
+    "/home/nodog/Android/Sdk/ndk/21.2.6472646/build/cmake/android.toolchain.cmake",
+    "/home/nodog/Android/Sdk/ndk/21.2.6472646/build/cmake/platforms.cmake",
+    "/home/nodog/docs/asp/android_native_win_buff/app/src/main/cpp/CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/release/x86\" clean"
+  ],
+  "buildTargetsCommand": "/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja  -C \"/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/release/x86\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "native_app_glue-Release-x86": {
+      "artifactName": "native_app_glue",
+      "buildCommand": "/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/release/x86\" native_app_glue",
+      "abi": "x86",
+      "output": "/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/release/x86/libnative_app_glue.a",
+      "runtimeFiles": []
+    },
+    "native-activity-Release-x86": {
+      "artifactName": "native-activity",
+      "buildCommand": "/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/release/x86\" native-activity",
+      "abi": "x86",
+      "output": "/home/nodog/docs/asp/android_native_win_buff/app/build/intermediates/cmake/release/obj/x86/libnative-activity.so",
+      "runtimeFiles": []
+    }
+  }
+}
