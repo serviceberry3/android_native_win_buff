@@ -39,7 +39,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="ObjectiveC" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../aosp2/working/frameworks/native/libs/gui/Surface.cpp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../aosp2/working/frameworks/native/libs/gui/include/gui/Surface.h" />
     <property name="memory.settings.postsync.last.time.stamp" value="1607735330426" />
     <property name="project.structure.last.edited" value="SDK Location" />
     <property name="project.structure.proportion" value="0.17" />
@@ -135,10 +135,10 @@
       <screen x="0" y="54" width="2160" height="3786" />
     </state>
     <state x="125" y="1397" width="1900" height="1084" key="#PSD/0.54.2160.3786@0.54.2160.3786" timestamp="1607735990785" />
-    <state x="502" y="1097" width="1408" height="2077" key="FileChooserDialogImpl" timestamp="1608146217583">
+    <state x="502" y="1087" width="1408" height="2077" key="FileChooserDialogImpl" timestamp="1608148178760">
       <screen x="0" y="54" width="2160" height="3786" />
     </state>
-    <state x="502" y="1097" width="1408" height="2077" key="FileChooserDialogImpl/0.54.2160.3786@0.54.2160.3786" timestamp="1608146217583" />
+    <state x="502" y="1087" width="1408" height="2077" key="FileChooserDialogImpl/0.54.2160.3786@0.54.2160.3786" timestamp="1608148178760" />
     <state width="2072" height="1109" key="GridCell.Tab.0.bottom" timestamp="1608088879700">
       <screen x="0" y="54" width="2160" height="3786" />
     </state>
@@ -167,9 +167,9 @@
       <screen x="0" y="54" width="2160" height="3786" />
     </state>
     <state x="408" y="919" key="run.anything.popup/0.54.2160.3786@0.54.2160.3786" timestamp="1608059546430" />
-    <state x="358" y="931" width="1440" height="2556" key="search.everywhere.popup" timestamp="1608146694928">
+    <state x="358" y="931" width="1440" height="2556" key="search.everywhere.popup" timestamp="1608148167044">
       <screen x="0" y="54" width="2160" height="3786" />
     </state>
-    <state x="358" y="931" width="1440" height="2556" key="search.everywhere.popup/0.54.2160.3786@0.54.2160.3786" timestamp="1608146694928" />
+    <state x="358" y="931" width="1440" height="2556" key="search.everywhere.popup/0.54.2160.3786@0.54.2160.3786" timestamp="1608148167044" />
   </component>
 </project>
