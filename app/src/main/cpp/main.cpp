@@ -132,20 +132,7 @@ static void fill_pixels(ANativeWindow_Buffer* buffer)
 
     LOGI("Num lines is %d, width of lines is %d, stride is %d", (int)n_lines, (int)line_width, (int)line_stride);
 
-    //halfway into screen
-    int index = 1231300;
 
-
-    for (int i = 0; i < 300; i++) {
-        //set this window_pixel_t to 0
-
-        for (int j = 0; j < 300; j++) {
-            large_buff[index++] = pixel_colors[0];
-        }
-
-        //amount to add if we're drawing a square should be (width of screen in pxls - 300 + 8)
-        index += 788;
-    }
 
 
     //EXPERIMENTAL: DOESN'T WORK.
@@ -159,7 +146,7 @@ static void fill_pixels(ANativeWindow_Buffer* buffer)
     //So in conclusion, apparently we can't just set buffer.bits to some mem we allocated on the heap in this app. That doesn't do anything once the ANativeWindow
     //is pushed to the display. We need to do some diggin in the Android source to find a way to actually set that pointer. Then we could render even faster by having all the
     //pixels pre-rendered and just modifying the address.
-    buffer->bits = large_buff;
+    //buffer->bits = large_buff;
 
     LOGI("After setting buffer->bits = large_buff, current_pixel address is now %p, and buffer->bits is %p", current_pixel, buffer->bits);
 
@@ -223,6 +210,7 @@ static void fill_pixels(ANativeWindow_Buffer* buffer)
     //copy our pixels from large_buff over to the bits of the window
     memcpy(buffer->bits, large_buff + oscillator, sizeof(window_pixel_t) * 1080 * 2280);
 
+    //bounce the red box back and forth across the screen
     if (dir == 0) {
         oscillator += 50;
     }
@@ -278,14 +266,12 @@ struct engine {
     struct saved_state state;
 };
 
-static inline bool engine_have_a_window
-        (struct engine const * __restrict const engine)
+static inline bool engine_have_a_window (struct engine const * __restrict const engine)
 {
     return engine->app->window != NULL;
 }
 
-static inline void engine_term_display
-        (struct engine * __restrict const engine)
+static inline void engine_term_display (struct engine * __restrict const engine)
 {
     engine->animating = 0;
 }
@@ -832,6 +818,28 @@ void android_main(struct android_app* state) {
     large_buff = (window_pixel_t *)malloc(sizeof(window_pixel_t) * 2280 * 1080 * 4);
 
     //statically create the red square
+    //halfway into screen
+    int index = 1231300;
+
+    //create array of 4 16-bit unsigned ints (will always be same value)
+    static color_16bits_t const pixel_colors[PIXEL_COLORS_MAX] = {
+            make565(255,  0,  0), //0b1111100000000000,  //pure red
+            make565(  0,255,  0), //pure green
+            make565(  0,  0,255), //pure blue
+            make565(255,255,  0)
+    };
+
+
+    for (int i = 0; i < 300; i++) {
+        //set this window_pixel_t to 0
+
+        for (int j = 0; j < 300; j++) {
+            large_buff[index++] = pixel_colors[0];
+        }
+
+        //amount to add if we're drawing a square should be (width of screen in pxls - 300 + 8)
+        index += 788;
+    }
 
 
     struct engine engine = {0};
