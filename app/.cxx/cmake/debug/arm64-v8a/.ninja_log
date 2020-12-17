@@ -58,3 +58,14 @@
 585	618	1608155765	/home/nodog/docs/asp/android_native_win_buff/app/build/intermediates/cmake/debug/obj/arm64-v8a/libnative-activity.so	c200168eab62ff2a
 1	330	1608155799	CMakeFiles/native-activity.dir/main.cpp.o	4411a39da20dbd2c
 330	345	1608155800	/home/nodog/docs/asp/android_native_win_buff/app/build/intermediates/cmake/debug/obj/arm64-v8a/libnative-activity.so	c200168eab62ff2a
+14	482	1608174887	CMakeFiles/native_app_glue.dir/home/nodog/Android/Sdk/ndk/21.2.6472646/sources/android/native_app_glue/android_native_app_glue.c.o	d9962e396e293a9e
+482	710	1608174887	libnative_app_glue.a	816caf75afe3fed1
+6	782	1608174887	CMakeFiles/native-activity.dir/Renderer.cpp.o	8cfae3cc4ed74e55
+2	795	1608174887	CMakeFiles/native-activity.dir/main.cpp.o	4411a39da20dbd2c
+795	866	1608174887	/home/nodog/docs/asp/android_native_win_buff/app/build/intermediates/cmake/debug/obj/arm64-v8a/libnative-activity.so	c200168eab62ff2a
+1	579	1608175516	CMakeFiles/native-activity.dir/main.cpp.o	4411a39da20dbd2c
+579	628	1608175516	/home/nodog/docs/asp/android_native_win_buff/app/build/intermediates/cmake/debug/obj/arm64-v8a/libnative-activity.so	c200168eab62ff2a
+1	879	1608175735	CMakeFiles/native-activity.dir/main.cpp.o	4411a39da20dbd2c
+879	935	1608175735	/home/nodog/docs/asp/android_native_win_buff/app/build/intermediates/cmake/debug/obj/arm64-v8a/libnative-activity.so	c200168eab62ff2a
+8	758	1608176212	CMakeFiles/native-activity.dir/main.cpp.o	4411a39da20dbd2c
+758	807	1608176212	/home/nodog/docs/asp/android_native_win_buff/app/build/intermediates/cmake/debug/obj/arm64-v8a/libnative-activity.so	c200168eab62ff2a
