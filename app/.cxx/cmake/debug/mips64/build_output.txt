@@ -1,15 +1,1 @@
-Android: Targeting API '21' with architecture 'mips64', ABI 'mips64', and processor 'mips64'
-Android: Selected Clang toolchain 'mips64el-linux-android-clang' with GCC toolchain 'mips64el-linux-android-4.9'
-Check for working C compiler: /home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang
-Check for working C compiler: /home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang -- works
-Detecting C compiler ABI info
-Detecting C compiler ABI info - done
-Detecting C compile features
-Detecting C compile features - done
-Check for working CXX compiler: /home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++
-Check for working CXX compiler: /home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ -- works
-Detecting CXX compiler ABI info
-Detecting CXX compiler ABI info - done
-Detecting CXX compile features
-Detecting CXX compile features - done
 Configuring done

@@ -1,12 +1,11 @@
 {
   "stringTable": {
     "0": "/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/debug/x86",
-    "1": "--target=i686-none-linux-android16 --gcc-toolchain=/home/nodog/Android/Sdk/ndk/21.2.6472646/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/nodog/Android/Sdk/ndk/21.2.6472646/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dnative_activity_EXPORTS -I/home/nodog/Android/Sdk/ndk/21.2.6472646/sources/android/native_app_glue -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -std=gnu++11 -Wall -Werror -O0 -fno-limit-debug-info -fPIC",
-    "2": "--target=i686-none-linux-android16 --gcc-toolchain=/home/nodog/Android/Sdk/ndk/21.2.6472646/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/nodog/Android/Sdk/ndk/21.2.6472646/toolchains/llvm/prebuilt/linux-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -O0 -fno-limit-debug-info -fPIC"
+    "1": "--target=i686-none-linux-android --gcc-toolchain=/home/nodog/VENV/opt/android-ndk-r15c/toolchains/x86-4.9/prebuilt/linux-x86_64 --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/sysroot -Dnative_activity_EXPORTS -I/home/nodog/VENV/opt/android-ndk-r15c/sources/android/native_app_glue -isystem /home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/include -isystem /home/nodog/VENV/opt/android-ndk-r15c/sources/android/support/include -isystem /home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++abi/include -isystem /home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/include -isystem /home/nodog/VENV/opt/android-ndk-r15c/sources/android/support/include -isystem /home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++abi/include -isystem /home/nodog/VENV/opt/android-ndk-r15c/sysroot/usr/include -isystem /home/nodog/VENV/opt/android-ndk-r15c/sysroot/usr/include/i686-linux-android -isystem /home/nodog/VENV/opt/android-ndk-r15c/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security -std=c++11 -std=gnu++11 -Wall -Werror -O0 -fno-limit-debug-info -fPIC",
+    "2": "--target=i686-none-linux-android --gcc-toolchain=/home/nodog/VENV/opt/android-ndk-r15c/toolchains/x86-4.9/prebuilt/linux-x86_64 --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/sysroot -isystem /home/nodog/VENV/opt/android-ndk-r15c/sysroot/usr/include -isystem /home/nodog/VENV/opt/android-ndk-r15c/sysroot/usr/include/i686-linux-android -isystem /home/nodog/VENV/opt/android-ndk-r15c/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security -O0 -fno-limit-debug-info"
   },
   "buildFiles": [
-    "/home/nodog/Android/Sdk/ndk/21.2.6472646/build/cmake/android.toolchain.cmake",
-    "/home/nodog/Android/Sdk/ndk/21.2.6472646/build/cmake/platforms.cmake",
+    "/home/nodog/VENV/opt/android-ndk-r15c/build/cmake/android.toolchain.cmake",
     "/home/nodog/docs/asp/android_native_win_buff/app/src/main/cpp/CMakeLists.txt"
   ],
   "cleanCommands": [
@@ -17,12 +16,12 @@
     "native_app_glue-Debug-x86": {
       "buildCommand": "/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/debug/x86\" native_app_glue",
       "buildType": "debug",
-      "toolchain": "200634432",
+      "toolchain": "1748819036",
       "abi": "x86",
       "artifactName": "native_app_glue",
       "files": [
         {
-          "src": "/home/nodog/Android/Sdk/ndk/21.2.6472646/sources/android/native_app_glue/android_native_app_glue.c",
+          "src": "/home/nodog/VENV/opt/android-ndk-r15c/sources/android/native_app_glue/android_native_app_glue.c",
           "flagsOrdinal": 2,
           "workingDirectoryOrdinal": 0
         }
@@ -34,7 +33,7 @@
     "native-activity-Debug-x86": {
       "buildCommand": "/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/debug/x86\" native-activity",
       "buildType": "debug",
-      "toolchain": "200634432",
+      "toolchain": "1748819036",
       "abi": "x86",
       "artifactName": "native-activity",
       "files": [
@@ -51,13 +50,15 @@
       ],
       "headers": [],
       "output": "/home/nodog/docs/asp/android_native_win_buff/app/build/intermediates/cmake/debug/obj/x86/libnative-activity.so",
-      "runtimeFiles": []
+      "runtimeFiles": [
+        "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/x86/libc++.a"
+      ]
     }
   },
   "toolchains": {
-    "200634432": {
-      "cCompilerExecutable": "/home/nodog/Android/Sdk/ndk/21.2.6472646/toolchains/llvm/prebuilt/linux-x86_64/bin/clang",
-      "cppCompilerExecutable": "/home/nodog/Android/Sdk/ndk/21.2.6472646/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++"
+    "1748819036": {
+      "cCompilerExecutable": "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang",
+      "cppCompilerExecutable": "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++"
     }
   },
   "cFileExtensions": [

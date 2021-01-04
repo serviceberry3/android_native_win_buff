@@ -1,7 +1,6 @@
 {
   "buildFiles": [
-    "/home/nodog/Android/Sdk/ndk/21.2.6472646/build/cmake/android.toolchain.cmake",
-    "/home/nodog/Android/Sdk/ndk/21.2.6472646/build/cmake/platforms.cmake",
+    "/home/nodog/VENV/opt/android-ndk-r15c/build/cmake/android.toolchain.cmake",
     "/home/nodog/docs/asp/android_native_win_buff/app/src/main/cpp/CMakeLists.txt"
   ],
   "cleanCommands": [
@@ -21,7 +20,9 @@
       "buildCommand": "/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/release/arm64-v8a\" native-activity",
       "abi": "arm64-v8a",
       "output": "/home/nodog/docs/asp/android_native_win_buff/app/build/intermediates/cmake/release/obj/arm64-v8a/libnative-activity.so",
-      "runtimeFiles": []
+      "runtimeFiles": [
+        "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/arm64-v8a/libc++.a"
+      ]
     }
   }
 }

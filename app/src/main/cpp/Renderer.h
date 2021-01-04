@@ -16,6 +16,7 @@
 #include <android/log.h>
 #include <android_native_app_glue.h>
 #include <android/native_window_jni.h>
+#include <stdlib.h>
 
 #define CLASS_NAME "android/app/NativeActivity"
 #define APPLICATION_CLASS_NAME "com/sample/teapot/TeapotApplication"

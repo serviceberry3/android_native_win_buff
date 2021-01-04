@@ -34,8 +34,8 @@
     <output url="file://$MODULE_DIR$/../../../app/build/intermediates/javac/debug/classes" />
     <output-test url="file://$MODULE_DIR$/../../../app/build/intermediates/javac/debugUnitTest/classes" />
     <exclude-output />
-    <content url="file://$USER_HOME$/Android/Sdk/ndk/21.2.6472646/sources/android/native_app_glue">
-      <sourceFolder url="file://$USER_HOME$/Android/Sdk/ndk/21.2.6472646/sources/android/native_app_glue" isTestSource="false" />
+    <content url="file://$USER_HOME$/VENV/opt/android-ndk-r15c/sources/android/native_app_glue">
+      <sourceFolder url="file://$USER_HOME$/VENV/opt/android-ndk-r15c/sources/android/native_app_glue" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../../app">
       <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/ap_generated_sources/debug/out" isTestSource="false" generated="true" />

@@ -1,0 +1,7 @@
+Executable : /home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja
+arguments : 
+-C
+/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/debug/mips64
+native-activity
+jvmArgs : 
+

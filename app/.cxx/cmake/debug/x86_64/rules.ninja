@@ -25,7 +25,7 @@ rule CUSTOM_COMMAND
 rule CXX_COMPILER__native-activity
   depfile = $DEP_FILE
   deps = gcc
-  command = /home/nodog/Android/Sdk/ndk/21.2.6472646/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android21 --gcc-toolchain=/home/nodog/Android/Sdk/ndk/21.2.6472646/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/nodog/Android/Sdk/ndk/21.2.6472646/toolchains/llvm/prebuilt/linux-x86_64/sysroot  $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  command = /home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android --gcc-toolchain=/home/nodog/VENV/opt/android-ndk-r15c/toolchains/x86_64-4.9/prebuilt/linux-x86_64 --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/sysroot  $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
   description = Building CXX object $out
 
 
@@ -33,7 +33,7 @@ rule CXX_COMPILER__native-activity
 # Rule for linking CXX shared library.
 
 rule CXX_SHARED_LIBRARY_LINKER__native-activity
-  command = $PRE_LINK && /home/nodog/Android/Sdk/ndk/21.2.6472646/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android21 --gcc-toolchain=/home/nodog/Android/Sdk/ndk/21.2.6472646/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/nodog/Android/Sdk/ndk/21.2.6472646/toolchains/llvm/prebuilt/linux-x86_64/sysroot -fPIC $LANGUAGE_COMPILE_FLAGS $ARCH_FLAGS $LINK_FLAGS -shared $SONAME_FLAG$SONAME -o $TARGET_FILE $in $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
+  command = $PRE_LINK && /home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android --gcc-toolchain=/home/nodog/VENV/opt/android-ndk-r15c/toolchains/x86_64-4.9/prebuilt/linux-x86_64 --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/sysroot -fPIC $LANGUAGE_COMPILE_FLAGS $ARCH_FLAGS $LINK_FLAGS -shared $SONAME_FLAG$SONAME -o $TARGET_FILE $in $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
   description = Linking CXX shared library $TARGET_FILE
   restat = $RESTAT
 
@@ -44,7 +44,7 @@ rule CXX_SHARED_LIBRARY_LINKER__native-activity
 rule C_COMPILER__native_app_glue
   depfile = $DEP_FILE
   deps = gcc
-  command = /home/nodog/Android/Sdk/ndk/21.2.6472646/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=x86_64-none-linux-android21 --gcc-toolchain=/home/nodog/Android/Sdk/ndk/21.2.6472646/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/nodog/Android/Sdk/ndk/21.2.6472646/toolchains/llvm/prebuilt/linux-x86_64/sysroot $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out   -c $in
+  command = /home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=x86_64-none-linux-android --gcc-toolchain=/home/nodog/VENV/opt/android-ndk-r15c/toolchains/x86_64-4.9/prebuilt/linux-x86_64 --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/sysroot $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out   -c $in
   description = Building C object $out
 
 
@@ -52,7 +52,7 @@ rule C_COMPILER__native_app_glue
 # Rule for linking C static library.
 
 rule C_STATIC_LIBRARY_LINKER__native_app_glue
-  command = $PRE_LINK && /home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/cmake -E remove $TARGET_FILE && /home/nodog/Android/Sdk/ndk/21.2.6472646/toolchains/llvm/prebuilt/linux-x86_64/bin/x86_64-linux-android-ar qc $TARGET_FILE $LINK_FLAGS $in && /home/nodog/Android/Sdk/ndk/21.2.6472646/toolchains/llvm/prebuilt/linux-x86_64/bin/x86_64-linux-android-ranlib $TARGET_FILE && $POST_BUILD
+  command = $PRE_LINK && /home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/cmake -E remove $TARGET_FILE && /home/nodog/VENV/opt/android-ndk-r15c/toolchains/x86_64-4.9/prebuilt/linux-x86_64/bin/x86_64-linux-android-ar qc $TARGET_FILE $LINK_FLAGS $in && /home/nodog/VENV/opt/android-ndk-r15c/toolchains/x86_64-4.9/prebuilt/linux-x86_64/bin/x86_64-linux-android-ranlib $TARGET_FILE && $POST_BUILD
   description = Linking C static library $TARGET_FILE
   restat = $RESTAT
 

@@ -1,6 +1,6 @@
 {
   "abi": "ARMEABI_V7A",
-  "abiPlatformVersion": 16,
+  "abiPlatformVersion": 14,
   "buildSettings": {
     "environmentVariables": []
   },
@@ -16,7 +16,7 @@
         "ndk"
       ],
       "buildRoot": "/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/debug/armeabi-v7a",
-      "cmakeToolchain": "/home/nodog/Android/Sdk/ndk/21.2.6472646/build/cmake/android.toolchain.cmake",
+      "cmakeToolchain": "/home/nodog/VENV/opt/android-ndk-r15c/build/cmake/android.toolchain.cmake",
       "cmakeExecutable": "/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/cmake",
       "variables": [
         {
@@ -29,7 +29,7 @@
         },
         {
           "name": "CMAKE_TOOLCHAIN_FILE",
-          "value": "/home/nodog/Android/Sdk/ndk/21.2.6472646/build/cmake/android.toolchain.cmake"
+          "value": "/home/nodog/VENV/opt/android-ndk-r15c/build/cmake/android.toolchain.cmake"
         },
         {
           "name": "ANDROID_ABI",
@@ -37,11 +37,11 @@
         },
         {
           "name": "ANDROID_NDK",
-          "value": "/home/nodog/Android/Sdk/ndk/21.2.6472646"
+          "value": "/home/nodog/VENV/opt/android-ndk-r15c"
         },
         {
           "name": "ANDROID_PLATFORM",
-          "value": "android-16"
+          "value": "android-14"
         },
         {
           "name": "CMAKE_ANDROID_ARCH_ABI",
@@ -49,7 +49,7 @@
         },
         {
           "name": "CMAKE_ANDROID_NDK",
-          "value": "/home/nodog/Android/Sdk/ndk/21.2.6472646"
+          "value": "/home/nodog/VENV/opt/android-ndk-r15c"
         },
         {
           "name": "CMAKE_EXPORT_COMPILE_COMMANDS",
@@ -69,7 +69,7 @@
         },
         {
           "name": "CMAKE_SYSTEM_VERSION",
-          "value": "16"
+          "value": "14"
         },
         {
           "name": "ANDROID_STL",
@@ -81,7 +81,7 @@
   "cxxBuildFolder": "/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/debug/armeabi-v7a",
   "info": {
     "abi": "ARMEABI_V7A",
-    "bitness": 32,
+    "bitness": 64,
     "deprecated": false,
     "default": true
   },
@@ -102,7 +102,7 @@
         "minimumCmakeVersion": "3.10.2",
         "ninjaExe": "/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja"
       },
-      "cmakeToolchainFile": "/home/nodog/Android/Sdk/ndk/21.2.6472646/build/cmake/android.toolchain.cmake",
+      "cmakeToolchainFile": "/home/nodog/VENV/opt/android-ndk-r15c/build/cmake/android.toolchain.cmake",
       "cxxFolder": "/home/nodog/docs/asp/android_native_win_buff/app/.cxx",
       "gradleModulePathName": ":app",
       "intermediatesFolder": "/home/nodog/docs/asp/android_native_win_buff/app/build/intermediates",
@@ -110,16 +110,25 @@
       "moduleBuildFile": "/home/nodog/docs/asp/android_native_win_buff/app/build.gradle",
       "moduleRootFolder": "/home/nodog/docs/asp/android_native_win_buff/app",
       "ndkDefaultAbiList": [
+        "ARMEABI",
         "ARMEABI_V7A",
         "ARM64_V8A",
+        "MIPS",
+        "MIPS64",
         "X86",
         "X86_64"
       ],
-      "ndkFolder": "/home/nodog/Android/Sdk/ndk/21.2.6472646",
+      "ndkFolder": "/home/nodog/VENV/opt/android-ndk-r15c",
       "ndkMetaAbiList": [
         {
+          "abi": "ARMEABI",
+          "bitness": 64,
+          "deprecated": false,
+          "default": true
+        },
+        {
           "abi": "ARMEABI_V7A",
-          "bitness": 32,
+          "bitness": 64,
           "deprecated": false,
           "default": true
         },
@@ -130,8 +139,20 @@
           "default": true
         },
         {
+          "abi": "MIPS",
+          "bitness": 64,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "MIPS64",
+          "bitness": 64,
+          "deprecated": false,
+          "default": true
+        },
+        {
           "abi": "X86",
-          "bitness": 32,
+          "bitness": 64,
           "deprecated": false,
           "default": true
         },
@@ -142,35 +163,17 @@
           "default": true
         }
       ],
-      "ndkMetaPlatforms": {
-        "min": 16,
-        "max": 29,
-        "aliases": {
-          "20": 19,
-          "25": 24,
-          "J": 16,
-          "J-MR1": 17,
-          "J-MR2": 18,
-          "K": 19,
-          "L": 21,
-          "L-MR1": 22,
-          "M": 23,
-          "N": 24,
-          "N-MR1": 24,
-          "O": 26,
-          "O-MR1": 27,
-          "P": 28,
-          "Q": 29
-        }
-      },
       "ndkSupportedAbiList": [
+        "ARMEABI",
         "ARMEABI_V7A",
         "ARM64_V8A",
+        "MIPS",
+        "MIPS64",
         "X86",
         "X86_64"
       ],
-      "ndkDefaultStl": "LIBCXX_STATIC",
-      "ndkVersion": "21.2.6472646",
+      "ndkDefaultStl": "GNUSTL_STATIC",
+      "ndkVersion": "15.2.4203891",
       "project": {
         "compilerSettingsCacheFolder": "/home/nodog/docs/asp/android_native_win_buff/.cxx",
         "cxxFolder": "/home/nodog/docs/asp/android_native_win_buff/.cxx",
@@ -183,22 +186,48 @@
       },
       "splitsAbiFilterSet": [],
       "stlSharedObjectMap": {
+        "GNUSTL_SHARED": {
+          "ARMEABI": "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi/libgnustl_shared.so",
+          "ARMEABI_V7A": "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so",
+          "ARM64_V8A": "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/gnu-libstdc++/4.9/libs/arm64-v8a/libgnustl_shared.so",
+          "MIPS": "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/gnu-libstdc++/4.9/libs/mips/libgnustl_shared.so",
+          "MIPS64": "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/gnu-libstdc++/4.9/libs/mips64/libgnustl_shared.so",
+          "X86": "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/libgnustl_shared.so",
+          "X86_64": "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86_64/libgnustl_shared.so"
+        },
+        "GNUSTL_STATIC": {},
         "LIBCXX_SHARED": {
-          "ARMEABI_V7A": "/home/nodog/Android/Sdk/ndk/21.2.6472646/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/arm-linux-androideabi/libc++_shared.so",
-          "ARM64_V8A": "/home/nodog/Android/Sdk/ndk/21.2.6472646/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/libc++_shared.so",
-          "X86": "/home/nodog/Android/Sdk/ndk/21.2.6472646/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/i686-linux-android/libc++_shared.so",
-          "X86_64": "/home/nodog/Android/Sdk/ndk/21.2.6472646/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/libc++_shared.so"
+          "ARMEABI": "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/armeabi/libc++_shared.so",
+          "ARMEABI_V7A": "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/armeabi-v7a/libc++_shared.so",
+          "ARM64_V8A": "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/arm64-v8a/libc++_shared.so",
+          "MIPS": "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/mips/libc++_shared.so",
+          "MIPS64": "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/mips64/libc++_shared.so",
+          "X86": "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/x86/libc++_shared.so",
+          "X86_64": "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/x86_64/libc++_shared.so"
         },
         "LIBCXX_STATIC": {},
         "NONE": {},
+        "STLPORT_SHARED": {
+          "ARMEABI": "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/stlport/libs/armeabi/libstlport_shared.so",
+          "ARMEABI_V7A": "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/stlport/libs/armeabi-v7a/libstlport_shared.so",
+          "ARM64_V8A": "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/stlport/libs/arm64-v8a/libstlport_shared.so",
+          "MIPS": "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/stlport/libs/mips/libstlport_shared.so",
+          "MIPS64": "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/stlport/libs/mips64/libstlport_shared.so",
+          "X86": "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/stlport/libs/x86/libstlport_shared.so",
+          "X86_64": "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/stlport/libs/x86_64/libstlport_shared.so"
+        },
+        "STLPORT_STATIC": {},
         "SYSTEM": {}
       }
     },
     "objFolder": "/home/nodog/docs/asp/android_native_win_buff/app/build/intermediates/cmake/debug/obj",
     "variantName": "debug",
     "validAbiList": [
+      "ARMEABI",
       "ARMEABI_V7A",
       "ARM64_V8A",
+      "MIPS",
+      "MIPS64",
       "X86",
       "X86_64"
     ],

@@ -1,9 +1,3 @@
 ninja: Entering directory `/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/debug/armeabi-v7a'
 [1/2] Building CXX object CMakeFiles/native-activity.dir/main.cpp.o
-FAILED: CMakeFiles/native-activity.dir/main.cpp.o 
-/home/nodog/Android/Sdk/ndk/21.2.6472646/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=armv7-none-linux-androideabi16 --gcc-toolchain=/home/nodog/Android/Sdk/ndk/21.2.6472646/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/nodog/Android/Sdk/ndk/21.2.6472646/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Dnative_activity_EXPORTS -I/home/nodog/Android/Sdk/ndk/21.2.6472646/sources/android/native_app_glue -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -std=gnu++11 -Wall -Werror -O0 -fno-limit-debug-info  -fPIC -MD -MT CMakeFiles/native-activity.dir/main.cpp.o -MF CMakeFiles/native-activity.dir/main.cpp.o.d -o CMakeFiles/native-activity.dir/main.cpp.o -c /home/nodog/docs/asp/android_native_win_buff/app/src/main/cpp/main.cpp
-/home/nodog/docs/asp/android_native_win_buff/app/src/main/cpp/main.cpp:123:31: error: cast to 'unsigned short *' from smaller integer type 'window_pixel_t' (aka 'unsigned short') [-Werror,-Wint-to-pointer-cast]
-        auto* current_pixel = (window_pixel_t*)(large_buff[i]);
-                              ^
-1 error generated.
-ninja: build stopped: subcommand failed.
+[2/2] Linking CXX shared library /home/nodog/docs/asp/android_native_win_buff/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-activity.so

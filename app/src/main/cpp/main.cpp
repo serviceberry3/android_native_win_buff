@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2010 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- */
-
-//BEGIN_INCLUDE(all)
 #include <initializer_list>
 #include <memory>
 #include <cstdlib>
@@ -25,9 +7,10 @@
 #include <jni.h>
 #include <cerrno>
 #include <cassert>
+#include <iostream>
 
 //Android uses the OpenGL ES (GLES) API to render graphics. To create GLES contexts and provide a windowing system for GLES renderings,
-// Android uses the EGL library. GLES calls render textured polygons, while EGL calls put renderings on screens
+//Android uses the EGL library. GLES calls render textured polygons, while EGL calls put renderings on screens
 #include <EGL/egl.h>
 #include <GLES/gl.h>
 #include "Renderer.h"
@@ -44,6 +27,10 @@ typedef uint16_t window_pixel_t;
 #define LOGW(...) ((void)__android_log_print(ANDROID_LOG_WARN, "native-activity", __VA_ARGS__))
 #define PIXEL_COLORS_MAX 4
 #define PIXEL_COLORS_MAX_MASK 0b11
+
+#define ANDROID_NATIVE_MAKE_CONSTANT(a,b,c,d) (((unsigned)(a)<<24)|((unsigned)(b)<<16)|((unsigned)(c)<<8)|(unsigned)(d))
+#define ANDROID_NATIVE_WINDOW_MAGIC ANDROID_NATIVE_MAKE_CONSTANT('_','w','n','d')
+#define ANDROID_NATIVE_BUFFER_MAGIC ANDROID_NATIVE_MAKE_CONSTANT('_','b','f','r')
 
 //quick function that takes some values r g b and manipulates them to get RGB565 result
 #define make565(r,g,b) ( (color_16bits_t) ((r >> 3) << 11) | ((g >> 2) << 5)  | (b >> 3) )
@@ -63,8 +50,173 @@ struct saved_state {
 };
 
 
+//TAKE DEFINITIONS FROM system/window.h TO AVOID COMPILER ERRORS------------------------------------------------------------------------------------------------
+typedef struct android_native_rect_t
+{
+    int32_t left;
+    int32_t top;
+    int32_t right;
+    int32_t bottom;
+} android_native_rect_t;
+
+
+
+typedef struct android_native_base_t
+{
+    /* a magic value defined by the actual EGL native type */
+    int magic;
+    /* the sizeof() of the actual EGL native type */
+    int version;
+    void* reserved[4];
+    /* reference-counting interface */
+    void (*incRef)(struct android_native_base_t* base);
+    void (*decRef)(struct android_native_base_t* base);
+} android_native_base_t;
+
+
+struct ANativeWindow
+{
+#ifdef __cplusplus
+    //constructor
+    ANativeWindow(): flags(0), minSwapInterval(0), maxSwapInterval(0), xdpi(0), ydpi(0)
+    {
+        common.magic = ANDROID_NATIVE_WINDOW_MAGIC;
+        common.version = sizeof(ANativeWindow);
+        memset(common.reserved, 0, sizeof(common.reserved));
+    }
+
+    /* Implement the methods that sp<ANativeWindow> expects so that it
+       can be used to automatically refcount ANativeWindow's. */
+    void incStrong(const void* id) const {
+        common.incRef(const_cast<android_native_base_t*>(&common));
+    }
+    void decStrong(const void* id) const {
+        common.decRef(const_cast<android_native_base_t*>(&common));
+    }
+#endif
+    struct android_native_base_t common;
+    /* flags describing some attributes of this surface or its updater */
+    const uint32_t flags;
+    /* min swap interval supported by this updated */
+    const int   minSwapInterval;
+    /* max swap interval supported by this updated */
+    const int   maxSwapInterval;
+    /* horizontal and vertical resolution in DPI */
+    const float xdpi;
+    const float ydpi;
+    /* Some storage reserved for the OEM's driver. */
+    intptr_t    oem[4];
+    /*
+     * Set the swap interval for this surface.
+     *
+     * Returns 0 on success or -errno on error.
+     */
+    int     (*setSwapInterval)(struct ANativeWindow* window,
+                               int interval);
+    /*
+     * Hook called by EGL to acquire a buffer. After this call, the buffer
+     * is not locked, so its content cannot be modified. This call may block if
+     * no buffers are available.
+     *
+     * The window holds a reference to the buffer between dequeueBuffer and
+     * either queueBuffer or cancelBuffer, so clients only need their own
+     * reference if they might use the buffer after queueing or canceling it.
+     * Holding a reference to a buffer after queueing or canceling it is only
+     * allowed if a specific buffer count has been set.
+     *
+     * Returns 0 on success or -errno on error.
+     */
+    int     (*dequeueBuffer)(struct ANativeWindow* window,
+                             struct ANativeWindowBuffer** buffer);
+    /*
+     * hook called by EGL to lock a buffer. This MUST be called before modifying
+     * the content of a buffer. The buffer must have been acquired with
+     * dequeueBuffer first.
+     *
+     * Returns 0 on success or -errno on error.
+     */
+    int     (*lockBuffer)(struct ANativeWindow* window,
+                          struct ANativeWindowBuffer* buffer);
+    /*
+     * Hook called by EGL when modifications to the render buffer are done.
+     * This unlocks and post the buffer.
+     *
+     * The window holds a reference to the buffer between dequeueBuffer and
+     * either queueBuffer or cancelBuffer, so clients only need their own
+     * reference if they might use the buffer after queueing or canceling it.
+     * Holding a reference to a buffer after queueing or canceling it is only
+     * allowed if a specific buffer count has been set.
+     *
+     * Buffers MUST be queued in the same order than they were dequeued.
+     *
+     * Returns 0 on success or -errno on error.
+     */
+    int     (*queueBuffer)(struct ANativeWindow* window,
+                           struct ANativeWindowBuffer* buffer);
+    /*
+     * hook used to retrieve information about the native window.
+     *
+     * Returns 0 on success or -errno on error.
+     */
+    int     (*query)(const struct ANativeWindow* window,
+                     int what, int* value);
+    /*
+     * hook used to perform various operations on the surface.
+     * (*perform)() is a generic mechanism to add functionality to
+     * ANativeWindow while keeping backward binary compatibility.
+     *
+     * DO NOT CALL THIS HOOK DIRECTLY.  Instead, use the helper functions
+     * defined below.
+     *
+     *  (*perform)() returns -ENOENT if the 'what' parameter is not supported
+     *  by the surface's implementation.
+     *
+     * The valid operations are:
+     *     NATIVE_WINDOW_SET_USAGE
+     *     NATIVE_WINDOW_CONNECT               (deprecated)
+     *     NATIVE_WINDOW_DISCONNECT            (deprecated)
+     *     NATIVE_WINDOW_SET_CROP
+     *     NATIVE_WINDOW_SET_BUFFER_COUNT
+     *     NATIVE_WINDOW_SET_BUFFERS_GEOMETRY  (deprecated)
+     *     NATIVE_WINDOW_SET_BUFFERS_TRANSFORM
+     *     NATIVE_WINDOW_SET_BUFFERS_TIMESTAMP
+     *     NATIVE_WINDOW_SET_BUFFERS_DIMENSIONS
+     *     NATIVE_WINDOW_SET_BUFFERS_FORMAT
+     *     NATIVE_WINDOW_SET_SCALING_MODE
+     *     NATIVE_WINDOW_LOCK                   (private)
+     *     NATIVE_WINDOW_UNLOCK_AND_POST        (private)
+     *     NATIVE_WINDOW_API_CONNECT            (private)
+     *     NATIVE_WINDOW_API_DISCONNECT         (private)
+     *
+     */
+    int     (*perform)(struct ANativeWindow* window,
+                       int operation, ... );
+    /*
+     * Hook used to cancel a buffer that has been dequeued.
+     * No synchronization is performed between dequeue() and cancel(), so
+     * either external synchronization is needed, or these functions must be
+     * called from the same thread.
+     *
+     * The window holds a reference to the buffer between dequeueBuffer and
+     * either queueBuffer or cancelBuffer, so clients only need their own
+     * reference if they might use the buffer after queueing or canceling it.
+     * Holding a reference to a buffer after queueing or canceling it is only
+     * allowed if a specific buffer count has been set.
+     */
+    int     (*cancelBuffer)(struct ANativeWindow* window,
+                            struct ANativeWindowBuffer* buffer);
+    void* reserved_proc[2];
+};
+//END COPIED DECLARATIONS--------------------------------------------------------------------------------------------------------------
+
+
+
 int frameNum = 0;
-//android_native_rect_t test_rect {300, 4000, 1200, 6000};
+
+//test cropping rectangle for screen
+android_native_rect_t test_rect {0, 0, 1080, 2280};
+
+//oscillation direction
 int dir = 0;
 
 
@@ -129,10 +281,7 @@ static void fill_pixels(ANativeWindow_Buffer* buffer)
     uint_fast32_t n_lines = buffer->height;
 
 
-
     LOGI("Num lines is %d, width of lines is %d, stride is %d", (int)n_lines, (int)line_width, (int)line_stride);
-
-
 
 
     //EXPERIMENTAL: DOESN'T WORK.
@@ -176,7 +325,7 @@ static void fill_pixels(ANativeWindow_Buffer* buffer)
         }*/
 
 
-        if (n_lines % 20==0) {
+        if (n_lines % 20 == 0) {
             //write first 1080 bytes in the line (5040 pixels)
             while ((uintptr_t)current_pixel <= (uintptr_t)last_pixel_of_the_line - 1080) {
                 *current_pixel = current_pixel_color;
@@ -224,7 +373,6 @@ static void fill_pixels(ANativeWindow_Buffer* buffer)
     else if (oscillator==0 && dir==1) {
         dir = 0;
     }
-
 }
 
 /**
@@ -242,7 +390,7 @@ struct engine {
     int animating;
 
     //display is another important unit of composition. A system can have multiple displays and displays can be added or
-    // removed during normal system operations. Displays are added/removed at request of the HWC or the framework.
+    //removed during normal system operations. Displays are added/removed at request of the HWC or the framework.
     EGLDisplay display;
 
     //Before you draw with GLES, need to create GL context. In EGL, this means creating EGLContext and EGLSurface.
@@ -443,18 +591,41 @@ static int engine_init_display(struct engine* engine) {
 }
 */
 
+/*
+* native_window_set_crop(..., crop)
+* Sets which region of the next queued buffers needs to be considered.
+* Depending on the scaling mode, a buffer's crop region is scaled and/or
+* cropped to match the surface's size.  This function sets the crop in
+* pre-transformed buffer pixel coordinates.
+*
+* The specified crop region applies to all buffers queued after it is called.
+*
+* If 'crop' is NULL, subsequently queued buffers won't be cropped.
+*
+* An error is returned if for instance the crop region is invalid, out of the
+* buffer's bound or if the window is invalid.
+*/
+/*
+int native_window_set_crop(struct ANativeWindow* window, android_native_rect_t const* crop)
+{
+    return window->perform(window, NATIVE_WINDOW_SET_CROP, crop);
+}*/
+
 
 //draw a frame
 static void engine_draw_frame(struct engine* engine) {
     /*
     if (engine->display == nullptr) {
-        // No display.
+        LOGI("engine->display is NULL");
+
+        //No display.
         return;
     }
 
-    // Just fill the screen with a color.
+    //Just fill the screen with a color.
     //glClearColor(((float)engine->state.x)/engine->width, engine->state.angle,((float)engine->state.y)/engine->height, 1);
     //glClearColor(220, 0, 0, 0);
+
 
 
     if (frameNum==0) {
@@ -473,7 +644,7 @@ static void engine_draw_frame(struct engine* engine) {
         //adjust crop
         test_rect.top+=30;
         test_rect.bottom+=30;
-        native_window_set_crop(engine->app->window, &test_rect);
+        //native_window_set_crop(engine->app->window, &test_rect);
         if (test_rect.top>=4400) {
             dir = 1;
         }
@@ -483,13 +654,13 @@ static void engine_draw_frame(struct engine* engine) {
         //dir = 1
         test_rect.top-=30;
         test_rect.bottom-=30;
-        native_window_set_crop(engine->app->window, &test_rect);
+        //native_window_set_crop(engine->app->window, &test_rect);
         if (test_rect.top<=3800) {
             dir = 0;
         }
     }
-    eglSwapBuffers(engine->display, engine->surface);
-     */
+    eglSwapBuffers(engine->display, engine->surface);*/
+
 
     //ANativeWindow_Buffer in which to store the current frame's bits buffer
     ANativeWindow_Buffer buffer;
@@ -502,6 +673,9 @@ static void engine_draw_frame(struct engine* engine) {
         //abort
         goto draw_frame_end;
     }
+
+    LOGI("Calling set crop\n");
+    engine->app->window->perform(engine->app->window, 3, &test_rect);
 
     //make sure we can lock this ANativeWindow_Buffer so that we can edit pixels
     if (ANativeWindow_lock(engine->app->window, &buffer, nullptr) < 0)
@@ -522,7 +696,8 @@ static void engine_draw_frame(struct engine* engine) {
     //LOGI("Frame number %d", frameNum);
     frameNum++;
 
-    draw_frame_end:
+
+draw_frame_end:
     return;
 }
 
@@ -543,8 +718,7 @@ static void engine_term_display(struct engine* engine) {
     engine->display = EGL_NO_DISPLAY;
     engine->context = EGL_NO_CONTEXT;
     engine->surface = EGL_NO_SURFACE;
-}
-  */
+}*/
 
 //process the next input event
 static int32_t engine_handle_input(struct android_app* app, AInputEvent* event) {
@@ -624,7 +798,7 @@ static void engine_handle_cmd(struct android_app* app, int32_t cmd) {
             ANativeWindow_setBuffersGeometry(app->window, ANativeWindow_getWidth(app->window), ANativeWindow_getHeight(app->window), engine->initial_window_format);
 
             break;
-            
+
         //When the app comes into focus (I think this is like onResume())
         case APP_CMD_GAINED_FOCUS:
             //When our app gains focus, we start monitoring the accelerometer.
@@ -749,7 +923,7 @@ void android_main(struct android_app* state) {
     //Next, the program handles events queued by the glue library. The event handler follows the state structure.
 
 
-    //intialize a blank engine struct
+    //initialize a blank engine struct
     struct engine engine = {nullptr};
 
     //application can place a pointer to its own state object in userData (userData is just a void*)
@@ -785,7 +959,9 @@ void android_main(struct android_app* state) {
 
     //Next, a loop begins, in which application polls system for messages (sensor events). It sends messages to android_native_app_glue, which checks to see whether they
     //match any onAppCmd events defined in android_main. When a match occurs, the message is sent to the handler for execution
+    //int result = system("sh /system/bin/stop vendor.hwcomposer-2-4");
 
+    //LOGI("Result of call is %d", result);
 
     //loop waiting for stuff to do.
     while (true) {
@@ -839,7 +1015,7 @@ void android_main(struct android_app* state) {
                     //get one single ASensorEvent off the queue
                     while (ASensorEventQueue_getEvents(engine.sensorEventQueue, &event, 1) > 0) {
                         //log the accelerometer data
-                        LOGI("accelerometer: x=%f y=%f z=%f", event.acceleration.x, event.acceleration.y, event.acceleration.z);
+                        //LOGI("accelerometer: x=%f y=%f z=%f", event.acceleration.x, event.acceleration.y, event.acceleration.z);
                     }
                 }
             }
@@ -868,7 +1044,7 @@ void android_main(struct android_app* state) {
             }
 
             // Drawing is throttled to the screen update rate, so there is no need to do timing here.
-            LOGI("Engine animating");
+            //LOGI("Engine animating");
             engine_draw_frame(&engine);
         }
     }

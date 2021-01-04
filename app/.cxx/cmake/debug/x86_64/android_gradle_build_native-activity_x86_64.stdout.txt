@@ -1,6 +1,3 @@
 ninja: Entering directory `/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/debug/x86_64'
-[1/5] Building C object CMakeFiles/native_app_glue.dir/home/nodog/Android/Sdk/ndk/21.2.6472646/sources/android/native_app_glue/android_native_app_glue.c.o
-[2/5] Linking C static library libnative_app_glue.a
-[3/5] Building CXX object CMakeFiles/native-activity.dir/Renderer.cpp.o
-[4/5] Building CXX object CMakeFiles/native-activity.dir/main.cpp.o
-[5/5] Linking CXX shared library /home/nodog/docs/asp/android_native_win_buff/app/build/intermediates/cmake/debug/obj/x86_64/libnative-activity.so
+[1/2] Building CXX object CMakeFiles/native-activity.dir/main.cpp.o
+[2/2] Linking CXX shared library /home/nodog/docs/asp/android_native_win_buff/app/build/intermediates/cmake/debug/obj/x86_64/libnative-activity.so

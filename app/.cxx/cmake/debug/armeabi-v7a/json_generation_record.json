@@ -1,7 +1,7 @@
 [
   {
     "level": "INFO",
-    "message": "Start JSON generation. Platform version: 16 min SDK version: armeabi-v7a",
+    "message": "Start JSON generation. Platform version: 14 min SDK version: armeabi-v7a",
     "file": "/home/nodog/docs/asp/android_native_win_buff/app/src/main/cpp/CMakeLists.txt",
     "tag": "debug|armeabi-v7a"
   },
