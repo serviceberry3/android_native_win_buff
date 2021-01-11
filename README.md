@@ -17,4 +17,12 @@ status_t res = backBuffer->lockAsync(GRALLOC_USAGE_SW_READ_OFTEN | GRALLOC_USAGE
 
 So I have no choice but to write pixels into that address in my program. I'm currently trying to, within my program, get access to that original bits address and change it to point to my allocated pixel memory. Then I'd be able to save more rendering time by just adjusting the pointer (which I **can** do in the DRM dumb buffer version of this app) and not having to use memcpy.
 
+UPDATE(01/07/21): I created a new version of the unlockAndPost() function in Surface.cpp (in AOSP source code) which avoids setting mLockedBuffer back to null after each unlock. So it reuses the same buffer. Then I also needed to comment out the isDequeued() check in BufferQueueProducer.cpp. Using Surface::perform() with SET_BUFFERS_USER_DIMENSIONS, I can force gralloc to create a buffer 4x as large as the screen, and then on each frame I just adjust the crop rectangle and unlockAndPost() the same buffer over and over again. I also created a custom version of Surface::lock() that doesn't call dequeueBufer(); it just reuses the last buffer and calls lockAsync() on that.
+
+However, something interesting was happening after I made these changes: the app started rendering at the expected speed, but then the time it took for my custom unlockAndPost() function to run gradually increases and the rendering gradually slows down. 
+
+After doing some deep diving, including running '''dumpsys SurfaceFlinger''' and using the Android systrace tool, I discovered that I was flooding the BufferQueue: queueBuffer() calls were running rampant. Normally, the queue/dequeue pairs are spaced out about as far apart as the VSYNCS, and "fence wait" happens in the lockAsync() function. "fence wait" ends in sync with "operation id," whatever that is...anyway, the issue is that in my hacked version, the queueBuffer() calls aren't timed correctly, because the lockAsync() function in Surface::lock() isn't waiting for a HWC release fence anymore. I'm trying to figure out why.
+
+
+
 

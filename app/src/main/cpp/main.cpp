@@ -32,6 +32,8 @@ typedef uint16_t window_pixel_t;
 #define ANDROID_NATIVE_WINDOW_MAGIC ANDROID_NATIVE_MAKE_CONSTANT('_','w','n','d')
 #define ANDROID_NATIVE_BUFFER_MAGIC ANDROID_NATIVE_MAKE_CONSTANT('_','b','f','r')
 
+//#define OG
+
 //quick function that takes some values r g b and manipulates them to get RGB565 result
 #define make565(r,g,b) ( (color_16bits_t) ((r >> 3) << 11) | ((g >> 2) << 5)  | (b >> 3) )
 
@@ -39,6 +41,8 @@ typedef uint16_t window_pixel_t;
     enum bool { false, true };
 	typedef enum bool bool;
 #endif
+
+
 
 /**
  * Our saved state data (accelerometer reading)
@@ -214,7 +218,9 @@ struct ANativeWindow
 int frameNum = 0;
 
 //test cropping rectangle for screen
+android_native_rect_t original {0, 0, 1080, 2280};
 android_native_rect_t test_rect {0, 0, 1080, 2280};
+android_native_rect_t test_rect2 {300, 0, 1080 + 300, 2280};
 
 //oscillation direction
 int dir = 0;
@@ -240,6 +246,7 @@ static inline uint_fast32_t pixel_colors_next (uint_fast32_t current_index)
     return (rand() & PIXEL_COLORS_MAX_MASK);
 }*/
 
+#ifdef OG
 static void fill_pixels(ANativeWindow_Buffer* buffer)
 {
 
@@ -254,7 +261,7 @@ static void fill_pixels(ANativeWindow_Buffer* buffer)
     };
 
 
-    //**NOTE: each pixel takes up 2 bytes in memory, so we need a memory array of 2 * 1080 * 2280
+    //NOTE***: each pixel takes up 2 bytes in memory, so we need a memory array of 2 * 1080 * 2280
 
 
     //Current pixel colors index
@@ -314,7 +321,8 @@ static void fill_pixels(ANativeWindow_Buffer* buffer)
         //CHANGED to always pick red for now
         current_pixel_color = pixel_colors[0];
 
-/*
+        /*
+        ///////////////////
         if (n_lines >= 1000 && n_lines <= 1300) {
             while (((uintptr_t) current_pixel <= (uintptr_t) last_pixel_of_the_line - 800)) {
                 if ((uintptr_t) current_pixel >= (uintptr_t) current_line_start + 800) {
@@ -322,8 +330,8 @@ static void fill_pixels(ANativeWindow_Buffer* buffer)
                 }
                 current_pixel++;
             }
-        }*/
-
+        }
+        /////////////////*/
 
         if (n_lines % 20 == 0) {
             //write first 1080 bytes in the line (5040 pixels)
@@ -374,6 +382,7 @@ static void fill_pixels(ANativeWindow_Buffer* buffer)
         dir = 0;
     }
 }
+#endif
 
 /**
  * Shared state for our app.
@@ -591,6 +600,8 @@ static int engine_init_display(struct engine* engine) {
 }
 */
 
+
+
 /*
 * native_window_set_crop(..., crop)
 * Sets which region of the next queued buffers needs to be considered.
@@ -611,6 +622,7 @@ int native_window_set_crop(struct ANativeWindow* window, android_native_rect_t c
     return window->perform(window, NATIVE_WINDOW_SET_CROP, crop);
 }*/
 
+int first = 1;
 
 //draw a frame
 static void engine_draw_frame(struct engine* engine) {
@@ -640,30 +652,10 @@ static void engine_draw_frame(struct engine* engine) {
         //LOGI("Finsihed render");
     }
 
-    else if (dir == 0) {
-        //adjust crop
-        test_rect.top+=30;
-        test_rect.bottom+=30;
-        //native_window_set_crop(engine->app->window, &test_rect);
-        if (test_rect.top>=4400) {
-            dir = 1;
-        }
-    }
 
-    else {
-        //dir = 1
-        test_rect.top-=30;
-        test_rect.bottom-=30;
-        //native_window_set_crop(engine->app->window, &test_rect);
-        if (test_rect.top<=3800) {
-            dir = 0;
-        }
-    }
     eglSwapBuffers(engine->display, engine->surface);*/
 
 
-    //ANativeWindow_Buffer in which to store the current frame's bits buffer
-    ANativeWindow_Buffer buffer;
 
     //make sure we have a window
     if (!engine_have_a_window(engine))
@@ -674,9 +666,11 @@ static void engine_draw_frame(struct engine* engine) {
         goto draw_frame_end;
     }
 
-    LOGI("Calling set crop\n");
-    engine->app->window->perform(engine->app->window, 3, &test_rect);
 
+    //ANativeWindow_Buffer in which to store the current frame's bits buffer
+    ANativeWindow_Buffer buffer;
+
+#ifdef OG
     //make sure we can lock this ANativeWindow_Buffer so that we can edit pixels
     if (ANativeWindow_lock(engine->app->window, &buffer, nullptr) < 0)
     {
@@ -686,16 +680,59 @@ static void engine_draw_frame(struct engine* engine) {
         goto draw_frame_end;
     }
 
-
     //fill the raw bits buffer
     fill_pixels(&buffer);
 
     //release the lock on our window's buffer and post the window to the screen
     ANativeWindow_unlockAndPost(engine->app->window);
 
+
+#else
+    if (dir == 0) {
+        //adjust crop
+        test_rect.left+=30;
+        test_rect.right+=30;
+        if (test_rect.left==900) {
+            dir = 1;
+        }
+    }
+
+    else {
+        test_rect.left-=30;
+        test_rect.right-=30;
+        if (test_rect.left==0) {
+            dir = 0;
+        }
+    }
+
+
+    if (first == 1) {
+        if (ANativeWindow_lock(engine->app->window, &buffer, nullptr) < 0)
+        {
+            LOGI("Could not lock the window... :C\n");
+
+            //abort
+            goto draw_frame_end;
+        }
+    }
+    else {
+
+        //lock the same buffer
+        engine->app->window->perform(engine->app->window, 49, &buffer, nullptr);
+
+    }
+
+    //adjust the crop of the GraphicBuffer and push it to the screen
+    LOGI("Calling set crop\n");
+    engine->app->window->perform(engine->app->window, 3, &test_rect);
+
+    //code 48 is a custom function we created in Surface.cpp
+    engine->app->window->perform(engine->app->window, 48, false);
+#endif
+
+
     //LOGI("Frame number %d", frameNum);
     frameNum++;
-
 
 draw_frame_end:
     return;
@@ -747,6 +784,82 @@ static int32_t engine_handle_input(struct android_app* app, AInputEvent* event) 
     return 0;
 }
 
+/*REFERENCE
+ enum {
+    // clang-format off
+    NATIVE_WINDOW_SET_USAGE                       =  ANATIVEWINDOW_PERFORM_SET_USAGE
+NATIVE_WINDOW_CONNECT                         =  1,
+NATIVE_WINDOW_DISCONNECT                      =  2,
+NATIVE_WINDOW_SET_CROP                        =  3,
+NATIVE_WINDOW_SET_BUFFER_COUNT                =  4,
+        NATIVE_WINDOW_SET_BUFFERS_GEOMETRY            =  ANATIVEWINDOW_PERFORM_SET_BUFFERS_GEOMETRY,
+NATIVE_WINDOW_SET_BUFFERS_TRANSFORM           =  6,
+        NATIVE_WINDOW_SET_BUFFERS_TIMESTAMP           =  7,
+        NATIVE_WINDOW_SET_BUFFERS_DIMENSIONS          =  8,
+        NATIVE_WINDOW_SET_BUFFERS_FORMAT              =  ANATIVEWINDOW_PERFORM_SET_BUFFERS_FORMAT,
+        NATIVE_WINDOW_SET_SCALING_MODE                = 10,
+NATIVE_WINDOW_LOCK                            = 11,
+NATIVE_WINDOW_UNLOCK_AND_POST                 = 12,
+NATIVE_WINDOW_API_CONNECT                     = 13,
+NATIVE_WINDOW_API_DISCONNECT                  = 14,
+NATIVE_WINDOW_SET_BUFFERS_USER_DIMENSIONS     = 15,
+NATIVE_WINDOW_SET_POST_TRANSFORM_CROP         = 16,
+NATIVE_WINDOW_SET_BUFFERS_STICKY_TRANSFORM    = 17,
+NATIVE_WINDOW_SET_SIDEBAND_STREAM             = 18,
+        NATIVE_WINDOW_SET_BUFFERS_DATASPACE           = 19,
+        NATIVE_WINDOW_SET_SURFACE_DAMAGE              = 20,
+NATIVE_WINDOW_SET_SHARED_BUFFER_MODE          = 21,
+        NATIVE_WINDOW_SET_AUTO_REFRESH                = 22,
+        NATIVE_WINDOW_GET_REFRESH_CYCLE_DURATION      = 23,
+        NATIVE_WINDOW_GET_NEXT_FRAME_ID               = 24,
+        NATIVE_WINDOW_ENABLE_FRAME_TIMESTAMPS         = 25,
+        NATIVE_WINDOW_GET_COMPOSITOR_TIMING           = 26,
+        NATIVE_WINDOW_GET_FRAME_TIMESTAMPS            = 27,
+        NATIVE_WINDOW_GET_WIDE_COLOR_SUPPORT          = 28,
+        NATIVE_WINDOW_GET_HDR_SUPPORT                 = 29,
+        NATIVE_WINDOW_SET_USAGE64                     = ANATIVEWINDOW_PERFORM_SET_USAGE64,
+        NATIVE_WINDOW_GET_CONSUMER_USAGE64            = 31,
+        NATIVE_WINDOW_SET_BUFFERS_SMPTE2086_METADATA  = 32,
+        NATIVE_WINDOW_SET_BUFFERS_CTA861_3_METADATA   = 33,
+        NATIVE_WINDOW_SET_BUFFERS_HDR10_PLUS_METADATA = 34,
+        NATIVE_WINDOW_SET_AUTO_PREROTATION            = 35,
+        NATIVE_WINDOW_GET_LAST_DEQUEUE_START          = 36,
+NATIVE_WINDOW_SET_DEQUEUE_TIMEOUT             = 37,
+NATIVE_WINDOW_GET_LAST_DEQUEUE_DURATION       = 38,
+NATIVE_WINDOW_GET_LAST_QUEUE_DURATION         = 39,
+NATIVE_WINDOW_SET_FRAME_RATE                  = 40,
+        NATIVE_WINDOW_SET_CANCEL_INTERCEPTOR          = 41,
+NATIVE_WINDOW_SET_DEQUEUE_INTERCEPTOR         = 42,
+NATIVE_WINDOW_SET_PERFORM_INTERCEPTOR         = 43,
+NATIVE_WINDOW_SET_QUEUE_INTERCEPTOR           = 44,
+NATIVE_WINDOW_ALLOCATE_BUFFERS                = 45,
+NATIVE_WINDOW_GET_LAST_QUEUED_BUFFER          = 46,
+NATIVE_WINDOW_SET_QUERY_INTERCEPTOR           = 47,
+// clang-format on
+};*/
+
+/*FOR REFERENCE
+* parameter for NATIVE_WINDOW_SET_SCALING_MODE
+ * keep in sync with Surface.java in frameworks/base
+enum {
+    //the window content is not updated (frozen) until a buffer of
+    //the window size is received (enqueued)
+    NATIVE_WINDOW_SCALING_MODE_FREEZE           = 0,
+
+    //the buffer is scaled in both dimensions to match the window size
+    NATIVE_WINDOW_SCALING_MODE_SCALE_TO_WINDOW  = 1,
+
+    //the buffer is scaled uniformly such that the smaller dimension
+    //of the buffer matches the window size (cropping in the process)
+    NATIVE_WINDOW_SCALING_MODE_SCALE_CROP       = 2,
+
+    //the window is clipped to the size of the buffer's crop rectangle; pixels
+    //outside the crop rectangle are treated as if they are completely
+    //transparent.
+    NATIVE_WINDOW_SCALING_MODE_NO_SCALE_CROP    = 3,
+};
+ */
+
 //process the next main command
 static void engine_handle_cmd(struct android_app* app, int32_t cmd) {
     //get our custom state engine that's attached to the passed android_app
@@ -763,6 +876,8 @@ static void engine_handle_cmd(struct android_app* app, int32_t cmd) {
 
         //if initialize window has been called for. The window is being shown, get it ready.
         case APP_CMD_INIT_WINDOW:
+            LOGI("CMD_INIT_WINDOW found");
+
             //make sure engine->app->window is non-null
             if (engine_have_a_window(engine))
             {
@@ -773,12 +888,83 @@ static void engine_handle_cmd(struct android_app* app, int32_t cmd) {
                 LOGI("New REnderer created");
                 engine_draw_frame(engine);*/
 
+#ifndef OG
+                LOGI("INIT_WINDOW: Getting initial format");
                 engine->initial_window_format = ANativeWindow_getFormat(app->window);
 
-                ANativeWindow_setBuffersGeometry(app->window, ANativeWindow_getWidth(app->window), ANativeWindow_getHeight(app->window),WINDOW_FORMAT_RGB_565);
 
-                LOGI("engine_draw_frame for init_window");
+                LOGI("INIT_WINDOW: Setting buffer user dimensions to 2x");
+                //set buffer user dimensions (trickles down to initial gralloc allocation request)
+                engine->app->window->perform(engine->app->window, 15, 1080 * 2, 2280 * 2); //2160, 4560
+#else
+
+
+                //This one probably shouldn't be used, because it sets users dimensions, format, and scaling mode all in one
+                //LOGI("INIT_WINDOW: setBuffersGeomoetry");
+                ANativeWindow_setBuffersGeometry(app->window, ANativeWindow_getWidth(app->window) , ANativeWindow_getHeight(app->window) ,WINDOW_FORMAT_RGB_565);
+
+#endif
+
+
+#ifndef OG
+                LOGI("INIT_WINDOW: Setting scaling mode...");
+                //set scaling mode to crop no scale
+                engine->app->window->perform(engine->app->window, 10, 3);
+
+                LOGI("INIT_WINDOW: Setting color format");
+                //set color format
+                engine->app->window->perform(engine->app->window, 9, WINDOW_FORMAT_RGB_565);
+
+                ANativeWindow_Buffer buffer;
+
+                LOGI("INIT_WINDOW: calling ANativeWindow_lock()");
+
+
+                //draw square once
+                //make sure we can lock this ANativeWindow_Buffer so that we can edit pixels
+                if (ANativeWindow_lock(engine->app->window, &buffer, nullptr) < 0)
+                {
+                    LOGI("Could not lock the window... :C\n");
+                    break;
+                }
+
+                auto* current_pixel = (window_pixel_t *)buffer.bits;
+
+                //for 4x
+                //int index = 6000300;
+
+                //for regular sized
+                //int index = 1231300;
+
+                int index = 2601130;
+
+
+                //fill the raw bits buffer
+                for (int i = 0; i < 300; i++) {
+                    for (int j = 0; j < 300; j++) {
+                        //set this window_pixel_t to red
+                        current_pixel[index++] = make565(255, 0, 0);
+                    }
+                    //index += 788;
+                    //index+=1868;
+                    index += 1876;
+                }
+
+                //adjust the crop of the GraphicBuffer
+                LOGI("Calling set crop to crop size of screen\n");
+                engine->app->window->perform(engine->app->window, 3, &original);
+
+                //LOGI("INIT_WINDOW: calling ANativeWindow_unlockAndPost()");
+                //release the lock on our window's buffer and post the window to the screen
+                //ANativeWindow_unlockAndPost(engine->app->window);
+
+                engine->app->window->perform(engine->app->window, 48, false);
+#endif
+
+                //LOGI("engine_draw_frame for init_window");
                 engine_draw_frame(engine);
+                first = 0;
+
             }
             break;
 
@@ -808,9 +994,7 @@ static void engine_handle_cmd(struct android_app* app, int32_t cmd) {
 
 
                 // We'd like to get 60 events per second (in us).
-                ASensorEventQueue_setEventRate(engine->sensorEventQueue,
-                                               engine->accelerometerSensor,
-                                               (1000L/60)*1000);
+                ASensorEventQueue_setEventRate(engine->sensorEventQueue, engine->accelerometerSensor,(1000L/60)*1000);
             }
             break;
 
@@ -899,6 +1083,7 @@ void android_main(struct android_app* state) {
     //halfway into screen
     int index = 1231300;
 
+
     //create array of 4 16-bit unsigned ints (will always be same value)
     static color_16bits_t const pixel_colors[PIXEL_COLORS_MAX] = {
             make565(255,  0,  0), //0b1111100000000000,  //pure red
@@ -906,6 +1091,7 @@ void android_main(struct android_app* state) {
             make565(  0,  0,255), //pure blue
             make565(255,255,  0)
     };
+
 
 
     for (int i = 0; i < 300; i++) {
@@ -918,6 +1104,10 @@ void android_main(struct android_app* state) {
         //amount to add if we're drawing a square should be (width of screen in pxls - 300 + 8)
         index += 788;
     }
+
+
+
+
 
 
     //Next, the program handles events queued by the glue library. The event handler follows the state structure.
