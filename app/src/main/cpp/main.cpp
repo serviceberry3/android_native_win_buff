@@ -14,10 +14,12 @@
 #include <EGL/egl.h>
 #include <GLES/gl.h>
 #include "Renderer.h"
+#include "glyphs.h"
 
 #include <android/sensor.h>
 #include <android/log.h>
 #include <android_native_app_glue.h>
+#include <android/bitmap.h>
 
 typedef uint16_t color_16bits_t;
 typedef uint8_t  color_8bits_channel_t;
@@ -25,14 +27,14 @@ typedef uint16_t window_pixel_t;
 
 //#define LOGI(...) ((void)__android_log_print(ANDROID_LOG_INFO, "native-activity", __VA_ARGS__))
 #define LOGW(...) ((void)__android_log_print(ANDROID_LOG_WARN, "native-activity", __VA_ARGS__))
-#define PIXEL_COLORS_MAX 4
+#define PIXEL_COLORS_MAX 5
 #define PIXEL_COLORS_MAX_MASK 0b11
 
 #define ANDROID_NATIVE_MAKE_CONSTANT(a,b,c,d) (((unsigned)(a)<<24)|((unsigned)(b)<<16)|((unsigned)(c)<<8)|(unsigned)(d))
 #define ANDROID_NATIVE_WINDOW_MAGIC ANDROID_NATIVE_MAKE_CONSTANT('_','w','n','d')
 #define ANDROID_NATIVE_BUFFER_MAGIC ANDROID_NATIVE_MAKE_CONSTANT('_','b','f','r')
 
-//#define OG
+#define OG
 
 //quick function that takes some values r g b and manipulates them to get RGB565 result
 #define make565(r,g,b) ( (color_16bits_t) ((r >> 3) << 11) | ((g >> 2) << 5)  | (b >> 3) )
@@ -77,6 +79,12 @@ typedef struct android_native_base_t
     void (*decRef)(struct android_native_base_t* base);
 } android_native_base_t;
 
+
+
+
+
+coord test[] = {{20, 30}, {20, 50}};
+coord thiscoord = {20, 20};
 
 struct ANativeWindow
 {
@@ -247,6 +255,7 @@ static inline uint_fast32_t pixel_colors_next (uint_fast32_t current_index)
 }*/
 
 #ifdef OG
+//the coord list comes from the basic pixel coordinates found by
 static void fill_pixels(ANativeWindow_Buffer* buffer)
 {
 
@@ -435,6 +444,10 @@ static inline void engine_term_display (struct engine * __restrict const engine)
     engine->animating = 0;
 }
 
+void produce_txt_pixels() {
+
+};
+
 
 void eglErrorString(EGLint error)
 {
@@ -600,6 +613,79 @@ static int engine_init_display(struct engine* engine) {
 }
 */
 
+ /*
+ void drawBitmap(JNIEnv *env, jobject obj, jobject surface, jobject bitmap) {
+     //Get the information of the bitmap, such as width and height
+     AndroidBitmapInfo info;
+
+     if (AndroidBitmap_getInfo(env, bitmap, &info) < 0) {
+         LOGI("java/lang/RuntimeException: unable to get bitmap info");
+         return;
+     }
+
+     char *data = nullptr;
+
+     //Get the native pointer corresponding to the bitmap
+     if (AndroidBitmap_lockPixels(env, bitmap, (void **) &data) < 0) {
+         LOGI("java/lang/RuntimeException: unable to lock pixels");
+         return;
+     }
+     if (AndroidBitmap_unlockPixels(env, bitmap) < 0) {
+         LOGI("java/lang/RuntimeException: unable to unlock pixels");
+         return;
+     }
+
+     //Get the target surface
+     ANativeWindow* window = ANativeWindow_fromSurface(env, surface);
+     if (window == nullptr) {
+         LOGI("java/lang/RuntimeException: unable to get native window");
+         return;
+     }
+
+     //Here is set to RGBA way, a total of 4 bytes 32 bits
+     int32_t result = ANativeWindow_setBuffersGeometry(window, info.width, info.height,WINDOW_FORMAT_RGBA_8888);
+
+     if (result < 0) {
+         LOGI("java/lang/RuntimeException: unable to set buffers geometry");
+
+         //release the window
+         ANativeWindow_release(window);
+         window = nullptr;
+         return;
+     }
+     ANativeWindow_acquire(window);
+
+     ANativeWindow_Buffer buffer;
+
+     //Lock the drawing surface of the window
+     if (ANativeWindow_lock(window, &buffer, nullptr) < 0) {
+         LOGI("java/lang/RuntimeException: unable to lock native window");
+
+         //release the window
+         ANativeWindow_release(window);
+         window = nullptr;
+         return;
+     }
+
+     //Convert to a pixel to handle
+     auto* bitmapPixels = (int32_t *) data;
+     auto* line = (uint32_t *) buffer.bits;
+
+     for (int y = 0; y < buffer.height; y++) {
+         for (int x = 0; x < buffer.width; x++) {
+             line[x] = bitmapPixels[buffer.height * y + x];
+         }
+         line = line + buffer.stride;
+     }
+
+     //Unlock the drawing surface of the window
+     if (ANativeWindow_unlockAndPost(window) < 0) {
+         LOGI("java/lang/RuntimeException: unable to unlock and post to native window");
+     }
+
+     //free the reference to the Surface
+     ANativeWindow_release(window);
+ }*/
 
 
 /*
@@ -654,7 +740,6 @@ static void engine_draw_frame(struct engine* engine) {
 
 
     eglSwapBuffers(engine->display, engine->surface);*/
-
 
 
     //make sure we have a window
@@ -716,10 +801,8 @@ static void engine_draw_frame(struct engine* engine) {
         }
     }
     else {
-
         //lock the same buffer
         engine->app->window->perform(engine->app->window, 49, &buffer, nullptr);
-
     }
 
     //adjust the crop of the GraphicBuffer and push it to the screen
@@ -729,7 +812,6 @@ static void engine_draw_frame(struct engine* engine) {
     //code 48 is a custom function we created in Surface.cpp
     engine->app->window->perform(engine->app->window, 48, false);
 #endif
-
 
     //LOGI("Frame number %d", frameNum);
     frameNum++;
@@ -964,7 +1046,6 @@ static void engine_handle_cmd(struct android_app* app, int32_t cmd) {
                 //LOGI("engine_draw_frame for init_window");
                 engine_draw_frame(engine);
                 first = 0;
-
             }
             break;
 
@@ -1081,19 +1162,20 @@ void android_main(struct android_app* state) {
 
     //statically create the red square
     //halfway into screen
-    int index = 1231300;
+    //int index = 1231300;
 
+    //int index = 0;
 
     //create array of 4 16-bit unsigned ints (will always be same value)
     static color_16bits_t const pixel_colors[PIXEL_COLORS_MAX] = {
             make565(255,  0,  0), //0b1111100000000000,  //pure red
             make565(  0,255,  0), //pure green
             make565(  0,  0,255), //pure blue
-            make565(255,255,  0)
+            make565(255,255,  0),
+            make565(255, 255, 255),
     };
 
-
-
+    /*
     for (int i = 0; i < 300; i++) {
         //set this window_pixel_t to 0
 
@@ -1102,16 +1184,51 @@ void android_main(struct android_app* state) {
         }
 
         //amount to add if we're drawing a square should be (width of screen in pxls - 300 + 8)
-        index += 788;
+        index += 2004;
+    }*/
+
+    LOGI("testing %d, %d\n", text[2].x, text[2].y);
+
+    //int x, y;
+    //int indx_into_txt = 0;
+
+    /*
+    for (int i = 0; i < 1080*2280*4; i++) {
+        x = i % 4560;
+        y = (i / 2160) | 0;
+
+        //LOGI("x is %d, y is %d\n", x, y);
+
+        if (x==3) {
+            LOGI("FOUND\n");
+        }
+
+        //LOGI("x and y found are %d, %d\n", text[indx_into_txt].x, text[indx_into_txt].y);
+        //LOGI("thiscoord %d, %d\n", thiscoord.x, thiscoord.y);
+
+
+        if (x == text[indx_into_txt].x && y == text[indx_into_txt].y) { //first is (1235, 1034)
+            LOGI("Matched\n");
+            large_buff[i] = pixel_colors[0];
+            indx_into_txt++;
+        }
+
+        //LOGI("size is %d\n", (int)(sizeof(text)/sizeof(text[0])));
+    }*/
+
+    for (int i = 0; i < 1080*2280*4; i++) {
+        large_buff[i] = pixel_colors[4];
     }
 
 
-
-
-
+    int this_pix;
+    for (int i = 0; i < (int)(sizeof(text) / sizeof(text[0])); i++) {
+        this_pix = (text[i].y - 1) * 4608 + text[i].x - 3533000; //first would be 4719600, which is way too big
+        LOGI("this_pix is %d\n", this_pix);
+        large_buff[this_pix] = pixel_colors[2];
+    }
 
     //Next, the program handles events queued by the glue library. The event handler follows the state structure.
-
 
     //initialize a blank engine struct
     struct engine engine = {nullptr};
@@ -1142,7 +1259,7 @@ void android_main(struct android_app* state) {
 
     //possibly restore engine.state from a previously saved state
     if (state->savedState != nullptr) {
-        // We are starting with a previous saved state; restore from it.
+        //We are starting with a previous saved state; restore from it.
         engine.state = *(struct saved_state*)state->savedState;
     }
 

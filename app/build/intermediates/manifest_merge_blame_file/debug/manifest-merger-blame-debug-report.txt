@@ -32,7 +32,7 @@
 18
 19    <!-- This .apk has no Java code itself, so set hasCode to false. -->
 20    <application
-20-->/home/nodog/docs/asp/android_native_win_buff/app/src/main/AndroidManifest.xml:17:3-37:17
+20-->/home/nodog/docs/asp/android_native_win_buff/app/src/main/AndroidManifest.xml:17:3-38:17
 21        android:allowBackup="false"
 21-->/home/nodog/docs/asp/android_native_win_buff/app/src/main/AndroidManifest.xml:18:7-34
 22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -53,33 +53,35 @@
 32         This will take care of integrating with our NDK code.
 33        -->
 34        <activity
-34-->/home/nodog/docs/asp/android_native_win_buff/app/src/main/AndroidManifest.xml:26:5-36:16
+34-->/home/nodog/docs/asp/android_native_win_buff/app/src/main/AndroidManifest.xml:26:5-37:16
 35            android:name="android.app.NativeActivity"
 35-->/home/nodog/docs/asp/android_native_win_buff/app/src/main/AndroidManifest.xml:26:15-56
 36            android:configChanges="orientation|keyboardHidden"
 36-->/home/nodog/docs/asp/android_native_win_buff/app/src/main/AndroidManifest.xml:28:15-65
-37            android:label="@string/app_name" >
+37            android:label="@string/app_name"
 37-->/home/nodog/docs/asp/android_native_win_buff/app/src/main/AndroidManifest.xml:27:15-47
-38
-39            <!-- Tell NativeActivity the name of our .so -->
-40            <meta-data
-40-->/home/nodog/docs/asp/android_native_win_buff/app/src/main/AndroidManifest.xml:30:7-31:52
-41                android:name="android.app.lib_name"
-41-->/home/nodog/docs/asp/android_native_win_buff/app/src/main/AndroidManifest.xml:30:18-53
-42                android:value="native-activity" />
-42-->/home/nodog/docs/asp/android_native_win_buff/app/src/main/AndroidManifest.xml:31:18-49
-43
-44            <intent-filter>
-44-->/home/nodog/docs/asp/android_native_win_buff/app/src/main/AndroidManifest.xml:32:7-35:23
-45                <action android:name="android.intent.action.MAIN" />
-45-->/home/nodog/docs/asp/android_native_win_buff/app/src/main/AndroidManifest.xml:33:9-61
-45-->/home/nodog/docs/asp/android_native_win_buff/app/src/main/AndroidManifest.xml:33:17-58
-46
-47                <category android:name="android.intent.category.LAUNCHER" />
-47-->/home/nodog/docs/asp/android_native_win_buff/app/src/main/AndroidManifest.xml:34:9-69
-47-->/home/nodog/docs/asp/android_native_win_buff/app/src/main/AndroidManifest.xml:34:19-66
-48            </intent-filter>
-49        </activity>
-50    </application>
-51
-52</manifest> <!-- END_INCLUDE(manifest) -->
+38            android:screenOrientation="landscape" >
+38-->/home/nodog/docs/asp/android_native_win_buff/app/src/main/AndroidManifest.xml:29:15-52
+39
+40            <!-- Tell NativeActivity the name of our .so -->
+41            <meta-data
+41-->/home/nodog/docs/asp/android_native_win_buff/app/src/main/AndroidManifest.xml:31:7-32:52
+42                android:name="android.app.lib_name"
+42-->/home/nodog/docs/asp/android_native_win_buff/app/src/main/AndroidManifest.xml:31:18-53
+43                android:value="native-activity" />
+43-->/home/nodog/docs/asp/android_native_win_buff/app/src/main/AndroidManifest.xml:32:18-49
+44
+45            <intent-filter>
+45-->/home/nodog/docs/asp/android_native_win_buff/app/src/main/AndroidManifest.xml:33:7-36:23
+46                <action android:name="android.intent.action.MAIN" />
+46-->/home/nodog/docs/asp/android_native_win_buff/app/src/main/AndroidManifest.xml:34:9-61
+46-->/home/nodog/docs/asp/android_native_win_buff/app/src/main/AndroidManifest.xml:34:17-58
+47
+48                <category android:name="android.intent.category.LAUNCHER" />
+48-->/home/nodog/docs/asp/android_native_win_buff/app/src/main/AndroidManifest.xml:35:9-69
+48-->/home/nodog/docs/asp/android_native_win_buff/app/src/main/AndroidManifest.xml:35:19-66
+49            </intent-filter>
+50        </activity>
+51    </application>
+52
+53</manifest> <!-- END_INCLUDE(manifest) -->
