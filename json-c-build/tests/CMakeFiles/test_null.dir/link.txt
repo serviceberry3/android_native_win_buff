@@ -1,0 +1,1 @@
+/usr/bin/cc -g  -rdynamic CMakeFiles/test_null.dir/test_null.c.o  -o test_null  -Wl,-rpath,/home/nodog/docs/asp/android_native_win_buff/json-c-build ../libjson-c.so.5.1.0 

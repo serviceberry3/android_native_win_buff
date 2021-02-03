@@ -14,10 +14,7 @@
       "abi": "mips",
       "output": "/home/nodog/docs/asp/android_native_win_buff/app/build/intermediates/cmake/debug/obj/mips/libnative-activity.so",
       "runtimeFiles": [
-        "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/mips/libc++.a",
-        "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/mips/libc++_static.a",
-        "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/mips/libc++abi.a",
-        "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/mips/libandroid_support.a"
+        "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/mips/libc++.so"
       ]
     },
     "native_app_glue-Debug-mips": {

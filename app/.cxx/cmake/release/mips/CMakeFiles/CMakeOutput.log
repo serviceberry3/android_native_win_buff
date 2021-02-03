@@ -1,19 +1,19 @@
 The target system is: Android - 14 - mips
-The host system is: Linux - 5.4.0-56-generic - x86_64
+The host system is: Linux - 5.8.0-41-generic - x86_64
 Determining if the C compiler works passed with the following output:
 Change Dir: /home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/release/mips/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_09cd7"
-[1/2] Building C object CMakeFiles/cmTC_09cd7.dir/testCCompiler.c.o
-[2/2] Linking C executable cmTC_09cd7
+Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_e7aba"
+[1/2] Building C object CMakeFiles/cmTC_e7aba.dir/testCCompiler.c.o
+[2/2] Linking C executable cmTC_e7aba
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/release/mips/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_4ada2"
-[1/2] Building C object CMakeFiles/cmTC_4ada2.dir/CMakeCCompilerABI.c.o
-[2/2] Linking C executable cmTC_4ada2
+Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_b3d91"
+[1/2] Building C object CMakeFiles/cmTC_b3d91.dir/CMakeCCompilerABI.c.o
+[2/2] Linking C executable cmTC_b3d91
 Android clang version 5.0.300080  (based on LLVM 5.0.300080)
 Target: mipsel-none-linux-android
 Thread model: posix
@@ -25,16 +25,16 @@ Candidate multilib: 32/mips-r1;@march=mips32
 Candidate multilib: 32/mips-r2;@march=mips32r2
 Candidate multilib: 32/mips-r6;@march=mips32r6
 Selected multilib: 32/mips-r1;@march=mips32
- "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/bin/ld" --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips --eh-frame-hdr -m elf32ltsmip -dynamic-linker /system/bin/linker -o cmTC_4ada2 /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips/usr/lib/../lib/crtbegin_dynamic.o -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/32/mips-r1 -L/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/mips -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/5.0.300080/lib/linux/mipsel -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/32/mips-r1 -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib/../lib -L/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips/usr/lib/../lib -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib -L/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips/usr/lib --exclude-libs libgcc.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections -z nocopyreloc CMakeFiles/cmTC_4ada2.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips/usr/lib/../lib/crtend_android.o
+ "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/bin/ld" --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips --eh-frame-hdr -m elf32ltsmip -dynamic-linker /system/bin/linker -o cmTC_b3d91 /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips/usr/lib/../lib/crtbegin_dynamic.o -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/32/mips-r1 -L/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/mips -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/5.0.300080/lib/linux/mipsel -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/32/mips-r1 -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib/../lib -L/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips/usr/lib/../lib -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib -L/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips/usr/lib --exclude-libs libgcc.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections -z nocopyreloc CMakeFiles/cmTC_b3d91.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips/usr/lib/../lib/crtend_android.o
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(mips64el-linux-android-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/release/mips/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_4ada2"]
-  ignore line: [[1/2] Building C object CMakeFiles/cmTC_4ada2.dir/CMakeCCompilerABI.c.o]
-  ignore line: [[2/2] Linking C executable cmTC_4ada2]
+  ignore line: [Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_b3d91"]
+  ignore line: [[1/2] Building C object CMakeFiles/cmTC_b3d91.dir/CMakeCCompilerABI.c.o]
+  ignore line: [[2/2] Linking C executable cmTC_b3d91]
   ignore line: [Android clang version 5.0.300080  (based on LLVM 5.0.300080)]
   ignore line: [Target: mipsel-none-linux-android]
   ignore line: [Thread model: posix]
@@ -51,7 +51,7 @@ Parsed C implicit link information from above output:
   ignore line: [@march=mips32r6]
   ignore line: [Selected multilib: 32/mips-r1]
   ignore line: [@march=mips32]
-  link line: [ "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/bin/ld" --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips --eh-frame-hdr -m elf32ltsmip -dynamic-linker /system/bin/linker -o cmTC_4ada2 /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips/usr/lib/../lib/crtbegin_dynamic.o -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/32/mips-r1 -L/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/mips -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/5.0.300080/lib/linux/mipsel -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/32/mips-r1 -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib/../lib -L/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips/usr/lib/../lib -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib -L/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips/usr/lib --exclude-libs libgcc.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections -z nocopyreloc CMakeFiles/cmTC_4ada2.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips/usr/lib/../lib/crtend_android.o]
+  link line: [ "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/bin/ld" --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips --eh-frame-hdr -m elf32ltsmip -dynamic-linker /system/bin/linker -o cmTC_b3d91 /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips/usr/lib/../lib/crtbegin_dynamic.o -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/32/mips-r1 -L/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/mips -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/5.0.300080/lib/linux/mipsel -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/32/mips-r1 -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib/../lib -L/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips/usr/lib/../lib -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib -L/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips/usr/lib --exclude-libs libgcc.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections -z nocopyreloc CMakeFiles/cmTC_b3d91.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips/usr/lib/../lib/crtend_android.o]
     arg [/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/bin/ld] ==> ignore
     arg [--sysroot=/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips] ==> ignore
     arg [--sysroot=/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips] ==> ignore
@@ -61,7 +61,7 @@ Parsed C implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/system/bin/linker] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_4ada2] ==> ignore
+    arg [cmTC_b3d91] ==> ignore
     arg [/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips/usr/lib/../lib/crtbegin_dynamic.o] ==> ignore
     arg [-L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/32/mips-r1] ==> dir [/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/32/mips-r1]
     arg [-L/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/mips] ==> dir [/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/mips]
@@ -82,7 +82,7 @@ Parsed C implicit link information from above output:
     arg [-znow] ==> ignore
     arg [--gc-sections] ==> ignore
     arg [-znocopyreloc] ==> ignore
-    arg [CMakeFiles/cmTC_4ada2.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_b3d91.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [-ldl] ==> lib [dl]
     arg [-lc] ==> lib [c]
@@ -107,9 +107,9 @@ Parsed C implicit link information from above output:
 Detecting C [-std=c11] compiler features compiled with the following output:
 Change Dir: /home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/release/mips/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_bad00"
-[1/2] Building C object CMakeFiles/cmTC_bad00.dir/feature_tests.c.o
-[2/2] Linking C executable cmTC_bad00
+Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_05c8a"
+[1/2] Building C object CMakeFiles/cmTC_05c8a.dir/feature_tests.c.o
+[2/2] Linking C executable cmTC_05c8a
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -121,9 +121,9 @@ Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC
 Detecting C [-std=c99] compiler features compiled with the following output:
 Change Dir: /home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/release/mips/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_d8b23"
-[1/2] Building C object CMakeFiles/cmTC_d8b23.dir/feature_tests.c.o
-[2/2] Linking C executable cmTC_d8b23
+Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_deda3"
+[1/2] Building C object CMakeFiles/cmTC_deda3.dir/feature_tests.c.o
+[2/2] Linking C executable cmTC_deda3
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -135,9 +135,9 @@ Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC
 Detecting C [-std=c90] compiler features compiled with the following output:
 Change Dir: /home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/release/mips/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_301a7"
-[1/2] Building C object CMakeFiles/cmTC_301a7.dir/feature_tests.c.o
-[2/2] Linking C executable cmTC_301a7
+Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_aecfd"
+[1/2] Building C object CMakeFiles/cmTC_aecfd.dir/feature_tests.c.o
+[2/2] Linking C executable cmTC_aecfd
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -147,17 +147,17 @@ Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/release/mips/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_7ef27"
-[1/2] Building CXX object CMakeFiles/cmTC_7ef27.dir/testCXXCompiler.cxx.o
-[2/2] Linking CXX executable cmTC_7ef27
+Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_70d8d"
+[1/2] Building CXX object CMakeFiles/cmTC_70d8d.dir/testCXXCompiler.cxx.o
+[2/2] Linking CXX executable cmTC_70d8d
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/release/mips/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_4b7c9"
-[1/2] Building CXX object CMakeFiles/cmTC_4b7c9.dir/CMakeCXXCompilerABI.cpp.o
-[2/2] Linking CXX executable cmTC_4b7c9
+Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_a2f4c"
+[1/2] Building CXX object CMakeFiles/cmTC_a2f4c.dir/CMakeCXXCompilerABI.cpp.o
+[2/2] Linking CXX executable cmTC_a2f4c
 Android clang version 5.0.300080  (based on LLVM 5.0.300080)
 Target: mipsel-none-linux-android
 Thread model: posix
@@ -169,16 +169,16 @@ Candidate multilib: 32/mips-r1;@march=mips32
 Candidate multilib: 32/mips-r2;@march=mips32r2
 Candidate multilib: 32/mips-r6;@march=mips32r6
 Selected multilib: 32/mips-r1;@march=mips32
- "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/bin/ld" --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips --eh-frame-hdr -m elf32ltsmip -dynamic-linker /system/bin/linker -o cmTC_4b7c9 /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips/usr/lib/../lib/crtbegin_dynamic.o -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/32/mips-r1 -L/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/mips -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/5.0.300080/lib/linux/mipsel -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/32/mips-r1 -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib/../lib -L/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips/usr/lib/../lib -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib -L/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips/usr/lib --exclude-libs libgcc.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections -z nocopyreloc CMakeFiles/cmTC_4b7c9.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc -lgcc -ldl -lc -lgcc -lgcc -ldl /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips/usr/lib/../lib/crtend_android.o
+ "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/bin/ld" --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips --eh-frame-hdr -m elf32ltsmip -dynamic-linker /system/bin/linker -o cmTC_a2f4c /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips/usr/lib/../lib/crtbegin_dynamic.o -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/32/mips-r1 -L/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/mips -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/5.0.300080/lib/linux/mipsel -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/32/mips-r1 -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib/../lib -L/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips/usr/lib/../lib -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib -L/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips/usr/lib --exclude-libs libgcc.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections -z nocopyreloc CMakeFiles/cmTC_a2f4c.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc -lgcc -ldl -lc -lgcc -lgcc -ldl /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips/usr/lib/../lib/crtend_android.o
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(mips64el-linux-android-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/release/mips/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_4b7c9"]
-  ignore line: [[1/2] Building CXX object CMakeFiles/cmTC_4b7c9.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [[2/2] Linking CXX executable cmTC_4b7c9]
+  ignore line: [Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_a2f4c"]
+  ignore line: [[1/2] Building CXX object CMakeFiles/cmTC_a2f4c.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [[2/2] Linking CXX executable cmTC_a2f4c]
   ignore line: [Android clang version 5.0.300080  (based on LLVM 5.0.300080)]
   ignore line: [Target: mipsel-none-linux-android]
   ignore line: [Thread model: posix]
@@ -195,7 +195,7 @@ Parsed CXX implicit link information from above output:
   ignore line: [@march=mips32r6]
   ignore line: [Selected multilib: 32/mips-r1]
   ignore line: [@march=mips32]
-  link line: [ "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/bin/ld" --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips --eh-frame-hdr -m elf32ltsmip -dynamic-linker /system/bin/linker -o cmTC_4b7c9 /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips/usr/lib/../lib/crtbegin_dynamic.o -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/32/mips-r1 -L/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/mips -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/5.0.300080/lib/linux/mipsel -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/32/mips-r1 -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib/../lib -L/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips/usr/lib/../lib -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib -L/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips/usr/lib --exclude-libs libgcc.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections -z nocopyreloc CMakeFiles/cmTC_4b7c9.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc -lgcc -ldl -lc -lgcc -lgcc -ldl /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips/usr/lib/../lib/crtend_android.o]
+  link line: [ "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/bin/ld" --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips --eh-frame-hdr -m elf32ltsmip -dynamic-linker /system/bin/linker -o cmTC_a2f4c /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips/usr/lib/../lib/crtbegin_dynamic.o -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/32/mips-r1 -L/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/mips -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/5.0.300080/lib/linux/mipsel -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/32/mips-r1 -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib/../lib -L/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips/usr/lib/../lib -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib -L/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips/usr/lib --exclude-libs libgcc.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections -z nocopyreloc CMakeFiles/cmTC_a2f4c.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc -lgcc -ldl -lc -lgcc -lgcc -ldl /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips/usr/lib/../lib/crtend_android.o]
     arg [/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/bin/ld] ==> ignore
     arg [--sysroot=/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips] ==> ignore
     arg [--sysroot=/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips] ==> ignore
@@ -205,7 +205,7 @@ Parsed CXX implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/system/bin/linker] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_4b7c9] ==> ignore
+    arg [cmTC_a2f4c] ==> ignore
     arg [/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-14/arch-mips/usr/lib/../lib/crtbegin_dynamic.o] ==> ignore
     arg [-L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/32/mips-r1] ==> dir [/home/nodog/VENV/opt/android-ndk-r15c/toolchains/mips64el-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/mips64el-linux-android/4.9.x/32/mips-r1]
     arg [-L/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/mips] ==> dir [/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/mips]
@@ -226,7 +226,7 @@ Parsed CXX implicit link information from above output:
     arg [-znow] ==> ignore
     arg [--gc-sections] ==> ignore
     arg [-znocopyreloc] ==> ignore
-    arg [CMakeFiles/cmTC_4b7c9.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_a2f4c.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc] ==> lib [gcc]
@@ -255,9 +255,9 @@ Parsed CXX implicit link information from above output:
 Detecting CXX [-std=c++1z] compiler features compiled with the following output:
 Change Dir: /home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/release/mips/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_1ee3d"
-[1/2] Building CXX object CMakeFiles/cmTC_1ee3d.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_1ee3d
+Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_86836"
+[1/2] Building CXX object CMakeFiles/cmTC_86836.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_86836
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -322,9 +322,9 @@ Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
 Change Dir: /home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/release/mips/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_5b5bb"
-[1/2] Building CXX object CMakeFiles/cmTC_5b5bb.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_5b5bb
+Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_bb6b4"
+[1/2] Building CXX object CMakeFiles/cmTC_bb6b4.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_bb6b4
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -389,9 +389,9 @@ Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
 Change Dir: /home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/release/mips/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_68796"
-[1/2] Building CXX object CMakeFiles/cmTC_68796.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_68796
+Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_9572a"
+[1/2] Building CXX object CMakeFiles/cmTC_9572a.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_9572a
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -456,9 +456,9 @@ Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
 Change Dir: /home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/release/mips/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_413e4"
-[1/2] Building CXX object CMakeFiles/cmTC_413e4.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_413e4
+Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_85bf8"
+[1/2] Building CXX object CMakeFiles/cmTC_85bf8.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_85bf8
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers

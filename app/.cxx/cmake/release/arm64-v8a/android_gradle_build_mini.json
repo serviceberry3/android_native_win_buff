@@ -21,7 +21,7 @@
       "abi": "arm64-v8a",
       "output": "/home/nodog/docs/asp/android_native_win_buff/app/build/intermediates/cmake/release/obj/arm64-v8a/libnative-activity.so",
       "runtimeFiles": [
-        "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/arm64-v8a/libc++.a"
+        "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/arm64-v8a/libc++.so"
       ]
     }
   }

@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/nodog/docs/asp/android_native_win_buff/json-c/debug.h
+stdlib.h
+-
+
+/home/nodog/docs/asp/android_native_win_buff/json-c/printbuf.h
+
+/home/nodog/docs/asp/android_native_win_buff/json-c/tests/test_printbuf.c
+assert.h
+-
+limits.h
+-
+stddef.h
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+debug.h
+/home/nodog/docs/asp/android_native_win_buff/json-c/tests/debug.h
+printbuf.h
+/home/nodog/docs/asp/android_native_win_buff/json-c/tests/printbuf.h
+

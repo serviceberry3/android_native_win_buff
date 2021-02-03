@@ -20,6 +20,10 @@
       "cmakeExecutable": "/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/cmake",
       "variables": [
         {
+          "name": "CMAKE_CXX_FLAGS",
+          "value": "-std\u003dc++11 -fexceptions"
+        },
+        {
           "name": "CMAKE_FIND_ROOT_PATH",
           "value": "/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/debug/prefab/armeabi/prefab"
         },
@@ -73,7 +77,7 @@
         },
         {
           "name": "ANDROID_STL",
-          "value": "c++_static"
+          "value": "c++_shared"
         }
       ]
     }
@@ -88,12 +92,14 @@
   "originalCxxBuildFolder": "/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/debug/armeabi",
   "variant": {
     "buildSystemArgumentList": [
-      "-DANDROID_STL\u003dc++_static"
+      "-DANDROID_STL\u003dc++_shared"
     ],
     "buildTargetSet": [],
     "cFlagsList": [],
     "cmakeSettingsConfiguration": "android-gradle-plugin-predetermined-name",
-    "cppFlagsList": [],
+    "cppFlagsList": [
+      "-std\u003dc++11 -fexceptions"
+    ],
     "isDebuggableEnabled": true,
     "module": {
       "buildSystem": "CMAKE",

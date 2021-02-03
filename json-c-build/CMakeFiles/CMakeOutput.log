@@ -1,0 +1,1279 @@
+The system is: Linux - 5.8.0-41-generic - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/cc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/3.16.3/CompilerIdC/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_3e9e2/fast && /usr/bin/make -f CMakeFiles/cmTC_3e9e2.dir/build.make CMakeFiles/cmTC_3e9e2.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3e9e2.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_3e9e2.dir/testCCompiler.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_3e9e2
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3e9e2.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_3e9e2.dir/testCCompiler.c.o  -o cmTC_3e9e2 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_5087d/fast && /usr/bin/make -f CMakeFiles/cmTC_5087d.dir/build.make CMakeFiles/cmTC_5087d.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5087d.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc   -v -o CMakeFiles/cmTC_5087d.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+OFFLOAD_TARGET_NAMES=nvptx-none:hsa
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.3.0-17ubuntu1~20.04' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-HskZEa/gcc-9-9.3.0/debian/tmp-nvptx/usr,hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 9.3.0 (Ubuntu 9.3.0-17ubuntu1~20.04) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5087d.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/9/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_5087d.dir/CMakeCCompilerABI.c.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccWGmhU5.s
+GNU C17 (Ubuntu 9.3.0-17ubuntu1~20.04) version 9.3.0 (x86_64-linux-gnu)
+	compiled by GNU C version 9.3.0, GMP version 6.2.0, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.22.1-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/9/include-fixed"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/9/../../../../x86_64-linux-gnu/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/lib/gcc/x86_64-linux-gnu/9/include
+ /usr/local/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+GNU C17 (Ubuntu 9.3.0-17ubuntu1~20.04) version 9.3.0 (x86_64-linux-gnu)
+	compiled by GNU C version 9.3.0, GMP version 6.2.0, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.22.1-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: bbf13931d8de1abe14040c9909cb6969
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5087d.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ as -v --64 -o CMakeFiles/cmTC_5087d.dir/CMakeCCompilerABI.c.o /tmp/ccWGmhU5.s
+GNU assembler version 2.34 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.34
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5087d.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+Linking C executable cmTC_5087d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5087d.dir/link.txt --verbose=1
+/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_5087d.dir/CMakeCCompilerABI.c.o  -o cmTC_5087d 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none:hsa
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.3.0-17ubuntu1~20.04' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-HskZEa/gcc-9-9.3.0/debian/tmp-nvptx/usr,hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 9.3.0 (Ubuntu 9.3.0-17ubuntu1~20.04) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_5087d' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/cccm1Uzw.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_5087d /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_5087d.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_5087d' '-mtune=generic' '-march=x86-64'
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/usr/lib/gcc/x86_64-linux-gnu/9/include]
+    add: [/usr/local/include]
+    add: [/usr/include/x86_64-linux-gnu]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/9/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/9/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/usr/lib/gcc/x86_64-linux-gnu/9/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_5087d/fast && /usr/bin/make -f CMakeFiles/cmTC_5087d.dir/build.make CMakeFiles/cmTC_5087d.dir/build]
+  ignore line: [make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_5087d.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_5087d.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/cc]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:hsa]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Target: x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.3.0-17ubuntu1~20.04' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-HskZEa/gcc-9-9.3.0/debian/tmp-nvptx/usr hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 9.3.0 (Ubuntu 9.3.0-17ubuntu1~20.04) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5087d.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/9/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_5087d.dir/CMakeCCompilerABI.c.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccWGmhU5.s]
+  ignore line: [GNU C17 (Ubuntu 9.3.0-17ubuntu1~20.04) version 9.3.0 (x86_64-linux-gnu)]
+  ignore line: [	compiled by GNU C version 9.3.0  GMP version 6.2.0  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.22.1-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/9/include-fixed"]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/9/../../../../x86_64-linux-gnu/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/9/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /usr/include/x86_64-linux-gnu]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C17 (Ubuntu 9.3.0-17ubuntu1~20.04) version 9.3.0 (x86_64-linux-gnu)]
+  ignore line: [	compiled by GNU C version 9.3.0  GMP version 6.2.0  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.22.1-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: bbf13931d8de1abe14040c9909cb6969]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5087d.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_5087d.dir/CMakeCCompilerABI.c.o /tmp/ccWGmhU5.s]
+  ignore line: [GNU assembler version 2.34 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.34]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5087d.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [Linking C executable cmTC_5087d]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5087d.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_5087d.dir/CMakeCCompilerABI.c.o  -o cmTC_5087d ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/cc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:hsa]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Target: x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.3.0-17ubuntu1~20.04' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-HskZEa/gcc-9-9.3.0/debian/tmp-nvptx/usr hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 9.3.0 (Ubuntu 9.3.0-17ubuntu1~20.04) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_5087d' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/cccm1Uzw.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_5087d /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_5087d.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/9/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cccm1Uzw.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-pie] ==> ignore
+    arg [-znow] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_5087d] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/9] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/9]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/9/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../..]
+    arg [CMakeFiles/cmTC_5087d.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--push-state] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--pop-state] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--push-state] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--pop-state] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o] ==> ignore
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/9] ==> [/usr/lib/gcc/x86_64-linux-gnu/9]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib] ==> [/usr/lib]
+  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse library dir [/lib/../lib] ==> [/lib]
+  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../..] ==> [/usr/lib]
+  implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/9;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+  implicit fwks: []
+
+
+Determining if the include file sys/resource.h exists passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_f2d5a/fast && /usr/bin/make -f CMakeFiles/cmTC_f2d5a.dir/build.make CMakeFiles/cmTC_f2d5a.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f2d5a.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_f2d5a.dir/CheckIncludeFile.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_f2d5a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f2d5a.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_f2d5a.dir/CheckIncludeFile.c.o  -o cmTC_f2d5a 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the getrusage exist passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_54c72/fast && /usr/bin/make -f CMakeFiles/cmTC_54c72.dir/build.make CMakeFiles/cmTC_54c72.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_54c72.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_54c72.dir/CheckSymbolExists.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_54c72
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_54c72.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_54c72.dir/CheckSymbolExists.c.o  -o cmTC_54c72 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <sys/resource.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef getrusage
+  return ((int*)(&getrusage))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the include file fcntl.h exists passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_d929d/fast && /usr/bin/make -f CMakeFiles/cmTC_d929d.dir/build.make CMakeFiles/cmTC_d929d.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d929d.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_d929d.dir/CheckIncludeFile.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_d929d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d929d.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_d929d.dir/CheckIncludeFile.c.o  -o cmTC_d929d  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file inttypes.h exists passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_d87a4/fast && /usr/bin/make -f CMakeFiles/cmTC_d87a4.dir/build.make CMakeFiles/cmTC_d87a4.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d87a4.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_d87a4.dir/CheckIncludeFile.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_d87a4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d87a4.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_d87a4.dir/CheckIncludeFile.c.o  -o cmTC_d87a4  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file stdarg.h exists passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_f0bc1/fast && /usr/bin/make -f CMakeFiles/cmTC_f0bc1.dir/build.make CMakeFiles/cmTC_f0bc1.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f0bc1.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_f0bc1.dir/CheckIncludeFile.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_f0bc1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f0bc1.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_f0bc1.dir/CheckIncludeFile.c.o  -o cmTC_f0bc1  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file strings.h exists passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_9c005/fast && /usr/bin/make -f CMakeFiles/cmTC_9c005.dir/build.make CMakeFiles/cmTC_9c005.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9c005.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_9c005.dir/CheckIncludeFile.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_9c005
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9c005.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_9c005.dir/CheckIncludeFile.c.o  -o cmTC_9c005  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file string.h exists passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_e35c1/fast && /usr/bin/make -f CMakeFiles/cmTC_e35c1.dir/build.make CMakeFiles/cmTC_e35c1.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e35c1.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_e35c1.dir/CheckIncludeFile.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_e35c1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e35c1.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_e35c1.dir/CheckIncludeFile.c.o  -o cmTC_e35c1  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file syslog.h exists passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_36a3b/fast && /usr/bin/make -f CMakeFiles/cmTC_36a3b.dir/build.make CMakeFiles/cmTC_36a3b.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_36a3b.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_36a3b.dir/CheckIncludeFile.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_36a3b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_36a3b.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_36a3b.dir/CheckIncludeFile.c.o  -o cmTC_36a3b  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if files stdlib.h;stdarg.h;string.h;float.h exist passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_f51f9/fast && /usr/bin/make -f CMakeFiles/cmTC_f51f9.dir/build.make CMakeFiles/cmTC_f51f9.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f51f9.dir/STDC_HEADERS.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_f51f9.dir/STDC_HEADERS.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CheckIncludeFiles/STDC_HEADERS.c
+Linking C executable cmTC_f51f9
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f51f9.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_f51f9.dir/STDC_HEADERS.c.o  -o cmTC_f51f9  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file unistd.h exists passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_074b3/fast && /usr/bin/make -f CMakeFiles/cmTC_074b3.dir/build.make CMakeFiles/cmTC_074b3.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_074b3.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_074b3.dir/CheckIncludeFile.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_074b3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_074b3.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_074b3.dir/CheckIncludeFile.c.o  -o cmTC_074b3  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file sys/types.h exists passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_797cb/fast && /usr/bin/make -f CMakeFiles/cmTC_797cb.dir/build.make CMakeFiles/cmTC_797cb.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_797cb.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_797cb.dir/CheckIncludeFile.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_797cb
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_797cb.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_797cb.dir/CheckIncludeFile.c.o  -o cmTC_797cb  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file dlfcn.h exists passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_a2c12/fast && /usr/bin/make -f CMakeFiles/cmTC_a2c12.dir/build.make CMakeFiles/cmTC_a2c12.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a2c12.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_a2c12.dir/CheckIncludeFile.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_a2c12
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a2c12.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_a2c12.dir/CheckIncludeFile.c.o  -o cmTC_a2c12  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file endian.h exists passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_351b8/fast && /usr/bin/make -f CMakeFiles/cmTC_351b8.dir/build.make CMakeFiles/cmTC_351b8.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_351b8.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_351b8.dir/CheckIncludeFile.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_351b8
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_351b8.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_351b8.dir/CheckIncludeFile.c.o  -o cmTC_351b8  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file limits.h exists passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_a1401/fast && /usr/bin/make -f CMakeFiles/cmTC_a1401.dir/build.make CMakeFiles/cmTC_a1401.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a1401.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_a1401.dir/CheckIncludeFile.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_a1401
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a1401.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_a1401.dir/CheckIncludeFile.c.o  -o cmTC_a1401  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file locale.h exists passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_129b3/fast && /usr/bin/make -f CMakeFiles/cmTC_129b3.dir/build.make CMakeFiles/cmTC_129b3.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_129b3.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_129b3.dir/CheckIncludeFile.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_129b3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_129b3.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_129b3.dir/CheckIncludeFile.c.o  -o cmTC_129b3  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file memory.h exists passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_c9b0b/fast && /usr/bin/make -f CMakeFiles/cmTC_c9b0b.dir/build.make CMakeFiles/cmTC_c9b0b.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c9b0b.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_c9b0b.dir/CheckIncludeFile.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_c9b0b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c9b0b.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_c9b0b.dir/CheckIncludeFile.c.o  -o cmTC_c9b0b  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file stdint.h exists passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_2b3d8/fast && /usr/bin/make -f CMakeFiles/cmTC_2b3d8.dir/build.make CMakeFiles/cmTC_2b3d8.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2b3d8.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_2b3d8.dir/CheckIncludeFile.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_2b3d8
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2b3d8.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_2b3d8.dir/CheckIncludeFile.c.o  -o cmTC_2b3d8  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file stdlib.h exists passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_996ae/fast && /usr/bin/make -f CMakeFiles/cmTC_996ae.dir/build.make CMakeFiles/cmTC_996ae.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_996ae.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_996ae.dir/CheckIncludeFile.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_996ae
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_996ae.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_996ae.dir/CheckIncludeFile.c.o  -o cmTC_996ae  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file sys/cdefs.h exists passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_a8395/fast && /usr/bin/make -f CMakeFiles/cmTC_a8395.dir/build.make CMakeFiles/cmTC_a8395.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a8395.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_a8395.dir/CheckIncludeFile.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_a8395
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a8395.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_a8395.dir/CheckIncludeFile.c.o  -o cmTC_a8395  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file sys/param.h exists passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_34181/fast && /usr/bin/make -f CMakeFiles/cmTC_34181.dir/build.make CMakeFiles/cmTC_34181.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_34181.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_34181.dir/CheckIncludeFile.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_34181
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_34181.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_34181.dir/CheckIncludeFile.c.o  -o cmTC_34181  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file sys/random.h exists passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_ac495/fast && /usr/bin/make -f CMakeFiles/cmTC_ac495.dir/build.make CMakeFiles/cmTC_ac495.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ac495.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_ac495.dir/CheckIncludeFile.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_ac495
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ac495.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_ac495.dir/CheckIncludeFile.c.o  -o cmTC_ac495  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file sys/stat.h exists passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_e357e/fast && /usr/bin/make -f CMakeFiles/cmTC_e357e.dir/build.make CMakeFiles/cmTC_e357e.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e357e.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_e357e.dir/CheckIncludeFile.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_e357e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e357e.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_e357e.dir/CheckIncludeFile.c.o  -o cmTC_e357e  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the INFINITY exist passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_837e0/fast && /usr/bin/make -f CMakeFiles/cmTC_837e0.dir/build.make CMakeFiles/cmTC_837e0.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_837e0.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_837e0.dir/CheckSymbolExists.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_837e0
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_837e0.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_837e0.dir/CheckSymbolExists.c.o  -o cmTC_837e0  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <math.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef INFINITY
+  return ((int*)(&INFINITY))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the isinf exist passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_59153/fast && /usr/bin/make -f CMakeFiles/cmTC_59153.dir/build.make CMakeFiles/cmTC_59153.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_59153.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_59153.dir/CheckSymbolExists.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_59153
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_59153.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_59153.dir/CheckSymbolExists.c.o  -o cmTC_59153  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <math.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef isinf
+  return ((int*)(&isinf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the isnan exist passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_a7a6d/fast && /usr/bin/make -f CMakeFiles/cmTC_a7a6d.dir/build.make CMakeFiles/cmTC_a7a6d.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a7a6d.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_a7a6d.dir/CheckSymbolExists.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_a7a6d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a7a6d.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_a7a6d.dir/CheckSymbolExists.c.o  -o cmTC_a7a6d  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <math.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef isnan
+  return ((int*)(&isnan))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the nan exist passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_345b9/fast && /usr/bin/make -f CMakeFiles/cmTC_345b9.dir/build.make CMakeFiles/cmTC_345b9.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_345b9.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_345b9.dir/CheckSymbolExists.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_345b9
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_345b9.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_345b9.dir/CheckSymbolExists.c.o  -o cmTC_345b9  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <math.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef nan
+  return ((int*)(&nan))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the snprintf exist passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_10a91/fast && /usr/bin/make -f CMakeFiles/cmTC_10a91.dir/build.make CMakeFiles/cmTC_10a91.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_10a91.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_10a91.dir/CheckSymbolExists.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_10a91
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_10a91.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_10a91.dir/CheckSymbolExists.c.o  -o cmTC_10a91  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdio.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef snprintf
+  return ((int*)(&snprintf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the vasprintf exist passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_94883/fast && /usr/bin/make -f CMakeFiles/cmTC_94883.dir/build.make CMakeFiles/cmTC_94883.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_94883.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_94883.dir/CheckSymbolExists.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_94883
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_94883.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_94883.dir/CheckSymbolExists.c.o  -o cmTC_94883  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdio.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef vasprintf
+  return ((int*)(&vasprintf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the vsnprintf exist passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_488cc/fast && /usr/bin/make -f CMakeFiles/cmTC_488cc.dir/build.make CMakeFiles/cmTC_488cc.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_488cc.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_488cc.dir/CheckSymbolExists.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_488cc
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_488cc.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_488cc.dir/CheckSymbolExists.c.o  -o cmTC_488cc  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdio.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef vsnprintf
+  return ((int*)(&vsnprintf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the vprintf exist passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_5330b/fast && /usr/bin/make -f CMakeFiles/cmTC_5330b.dir/build.make CMakeFiles/cmTC_5330b.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5330b.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_5330b.dir/CheckSymbolExists.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_5330b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5330b.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_5330b.dir/CheckSymbolExists.c.o  -o cmTC_5330b  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdio.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef vprintf
+  return ((int*)(&vprintf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the open exist passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_9d2db/fast && /usr/bin/make -f CMakeFiles/cmTC_9d2db.dir/build.make CMakeFiles/cmTC_9d2db.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9d2db.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_9d2db.dir/CheckSymbolExists.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_9d2db
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9d2db.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_9d2db.dir/CheckSymbolExists.c.o  -o cmTC_9d2db  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <fcntl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef open
+  return ((int*)(&open))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the realloc exist passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_70590/fast && /usr/bin/make -f CMakeFiles/cmTC_70590.dir/build.make CMakeFiles/cmTC_70590.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_70590.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_70590.dir/CheckSymbolExists.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_70590
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_70590.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_70590.dir/CheckSymbolExists.c.o  -o cmTC_70590  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdlib.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef realloc
+  return ((int*)(&realloc))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the setlocale exist passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_cddec/fast && /usr/bin/make -f CMakeFiles/cmTC_cddec.dir/build.make CMakeFiles/cmTC_cddec.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cddec.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_cddec.dir/CheckSymbolExists.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_cddec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cddec.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_cddec.dir/CheckSymbolExists.c.o  -o cmTC_cddec  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <locale.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef setlocale
+  return ((int*)(&setlocale))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the uselocale exist passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_a1d1f/fast && /usr/bin/make -f CMakeFiles/cmTC_a1d1f.dir/build.make CMakeFiles/cmTC_a1d1f.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a1d1f.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_a1d1f.dir/CheckSymbolExists.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_a1d1f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a1d1f.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_a1d1f.dir/CheckSymbolExists.c.o  -o cmTC_a1d1f  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <locale.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef uselocale
+  return ((int*)(&uselocale))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strcasecmp exist passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_6982a/fast && /usr/bin/make -f CMakeFiles/cmTC_6982a.dir/build.make CMakeFiles/cmTC_6982a.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6982a.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_6982a.dir/CheckSymbolExists.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_6982a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6982a.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_6982a.dir/CheckSymbolExists.c.o  -o cmTC_6982a  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <strings.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strcasecmp
+  return ((int*)(&strcasecmp))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strncasecmp exist passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_86f61/fast && /usr/bin/make -f CMakeFiles/cmTC_86f61.dir/build.make CMakeFiles/cmTC_86f61.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_86f61.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_86f61.dir/CheckSymbolExists.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_86f61
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_86f61.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_86f61.dir/CheckSymbolExists.c.o  -o cmTC_86f61  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <strings.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strncasecmp
+  return ((int*)(&strncasecmp))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strdup exist passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_011d3/fast && /usr/bin/make -f CMakeFiles/cmTC_011d3.dir/build.make CMakeFiles/cmTC_011d3.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_011d3.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_011d3.dir/CheckSymbolExists.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_011d3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_011d3.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_011d3.dir/CheckSymbolExists.c.o  -o cmTC_011d3  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <string.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strdup
+  return ((int*)(&strdup))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strerror exist passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_13694/fast && /usr/bin/make -f CMakeFiles/cmTC_13694.dir/build.make CMakeFiles/cmTC_13694.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_13694.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_13694.dir/CheckSymbolExists.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_13694
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_13694.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_13694.dir/CheckSymbolExists.c.o  -o cmTC_13694  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <string.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strerror
+  return ((int*)(&strerror))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the vsyslog exist passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_2e804/fast && /usr/bin/make -f CMakeFiles/cmTC_2e804.dir/build.make CMakeFiles/cmTC_2e804.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2e804.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_2e804.dir/CheckSymbolExists.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_2e804
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2e804.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_2e804.dir/CheckSymbolExists.c.o  -o cmTC_2e804  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <syslog.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef vsyslog
+  return ((int*)(&vsyslog))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the getrandom exist passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_1bbe0/fast && /usr/bin/make -f CMakeFiles/cmTC_1bbe0.dir/build.make CMakeFiles/cmTC_1bbe0.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1bbe0.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_1bbe0.dir/CheckSymbolExists.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_1bbe0
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1bbe0.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_1bbe0.dir/CheckSymbolExists.c.o  -o cmTC_1bbe0  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <sys/random.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef getrandom
+  return ((int*)(&getrandom))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strtoll exist passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_51d61/fast && /usr/bin/make -f CMakeFiles/cmTC_51d61.dir/build.make CMakeFiles/cmTC_51d61.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_51d61.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_51d61.dir/CheckSymbolExists.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_51d61
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_51d61.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_51d61.dir/CheckSymbolExists.c.o  -o cmTC_51d61  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdlib.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strtoll
+  return ((int*)(&strtoll))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strtoull exist passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_5c913/fast && /usr/bin/make -f CMakeFiles/cmTC_5c913.dir/build.make CMakeFiles/cmTC_5c913.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5c913.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_5c913.dir/CheckSymbolExists.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_5c913
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5c913.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_5c913.dir/CheckSymbolExists.c.o  -o cmTC_5c913  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+File /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdlib.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strtoull
+  return ((int*)(&strtoull))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the include file stddef.h exists passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_dca3a/fast && /usr/bin/make -f CMakeFiles/cmTC_dca3a.dir/build.make CMakeFiles/cmTC_dca3a.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_dca3a.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_dca3a.dir/CheckIncludeFile.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_dca3a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dca3a.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_dca3a.dir/CheckIncludeFile.c.o  -o cmTC_dca3a  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining size of int passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_40aef/fast && /usr/bin/make -f CMakeFiles/cmTC_40aef.dir/build.make CMakeFiles/cmTC_40aef.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_40aef.dir/SIZEOF_INT.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_40aef.dir/SIZEOF_INT.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CheckTypeSize/SIZEOF_INT.c
+Linking C executable cmTC_40aef
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_40aef.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_40aef.dir/SIZEOF_INT.c.o  -o cmTC_40aef  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining size of int64_t passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_56a03/fast && /usr/bin/make -f CMakeFiles/cmTC_56a03.dir/build.make CMakeFiles/cmTC_56a03.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_56a03.dir/SIZEOF_INT64_T.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_56a03.dir/SIZEOF_INT64_T.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CheckTypeSize/SIZEOF_INT64_T.c
+Linking C executable cmTC_56a03
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_56a03.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_56a03.dir/SIZEOF_INT64_T.c.o  -o cmTC_56a03  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining size of long passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_0b5c5/fast && /usr/bin/make -f CMakeFiles/cmTC_0b5c5.dir/build.make CMakeFiles/cmTC_0b5c5.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0b5c5.dir/SIZEOF_LONG.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_0b5c5.dir/SIZEOF_LONG.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CheckTypeSize/SIZEOF_LONG.c
+Linking C executable cmTC_0b5c5
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0b5c5.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_0b5c5.dir/SIZEOF_LONG.c.o  -o cmTC_0b5c5  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining size of long long passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_01e75/fast && /usr/bin/make -f CMakeFiles/cmTC_01e75.dir/build.make CMakeFiles/cmTC_01e75.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_01e75.dir/SIZEOF_LONG_LONG.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_01e75.dir/SIZEOF_LONG_LONG.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CheckTypeSize/SIZEOF_LONG_LONG.c
+Linking C executable cmTC_01e75
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_01e75.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_01e75.dir/SIZEOF_LONG_LONG.c.o  -o cmTC_01e75  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining size of size_t passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_39b30/fast && /usr/bin/make -f CMakeFiles/cmTC_39b30.dir/build.make CMakeFiles/cmTC_39b30.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_39b30.dir/SIZEOF_SIZE_T.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_39b30.dir/SIZEOF_SIZE_T.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CheckTypeSize/SIZEOF_SIZE_T.c
+Linking C executable cmTC_39b30
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_39b30.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_39b30.dir/SIZEOF_SIZE_T.c.o  -o cmTC_39b30  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining size of ssize_t passed with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_0e793/fast && /usr/bin/make -f CMakeFiles/cmTC_0e793.dir/build.make CMakeFiles/cmTC_0e793.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0e793.dir/SIZEOF_SSIZE_T.c.o
+/usr/bin/cc -D_GNU_SOURCE  -fPIE   -o CMakeFiles/cmTC_0e793.dir/SIZEOF_SSIZE_T.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CheckTypeSize/SIZEOF_SSIZE_T.c
+Linking C executable cmTC_0e793
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0e793.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_0e793.dir/SIZEOF_SSIZE_T.c.o  -o cmTC_0e793  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+
+Performing C SOURCE FILE Test HAVE_ATOMIC_BUILTINS succeeded with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_2dc0a/fast && /usr/bin/make -f CMakeFiles/cmTC_2dc0a.dir/build.make CMakeFiles/cmTC_2dc0a.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2dc0a.dir/src.c.o
+/usr/bin/cc -D_GNU_SOURCE  -DHAVE_ATOMIC_BUILTINS -fPIE   -o CMakeFiles/cmTC_2dc0a.dir/src.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_2dc0a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2dc0a.dir/link.txt --verbose=1
+/usr/bin/cc  -DHAVE_ATOMIC_BUILTINS    -rdynamic CMakeFiles/cmTC_2dc0a.dir/src.c.o  -o cmTC_2dc0a  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main() { int i, x = 0; i = __sync_add_and_fetch(&x,1); return x; }
+Performing C SOURCE FILE Test HAVE___THREAD succeeded with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_ade01/fast && /usr/bin/make -f CMakeFiles/cmTC_ade01.dir/build.make CMakeFiles/cmTC_ade01.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ade01.dir/src.c.o
+/usr/bin/cc -D_GNU_SOURCE  -DHAVE___THREAD -fPIE   -o CMakeFiles/cmTC_ade01.dir/src.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_ade01
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ade01.dir/link.txt --verbose=1
+/usr/bin/cc  -DHAVE___THREAD    -rdynamic CMakeFiles/cmTC_ade01.dir/src.c.o  -o cmTC_ade01  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+__thread int x = 0; int main() { return 0; }
+Performing C SOURCE FILE Test REENTRANT_WORKS succeeded with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_513cf/fast && /usr/bin/make -f CMakeFiles/cmTC_513cf.dir/build.make CMakeFiles/cmTC_513cf.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_513cf.dir/src.c.o
+/usr/bin/cc -D_GNU_SOURCE  -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes -DREENTRANT_WORKS -fPIE   -o CMakeFiles/cmTC_513cf.dir/src.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_513cf
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_513cf.dir/link.txt --verbose=1
+/usr/bin/cc  -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes -DREENTRANT_WORKS    -rdynamic CMakeFiles/cmTC_513cf.dir/src.c.o  -o cmTC_513cf  -lm 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+
+	/* uClibc toolchains without threading barf when _REENTRANT is defined */
+	#define _REENTRANT 1
+	#include <sys/types.h>
+	int main (void)
+	{
+	  return 0;
+	}
+	
+Performing C SOURCE FILE Test BSYMBOLIC_WORKS succeeded with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_835d9/fast && /usr/bin/make -f CMakeFiles/cmTC_835d9.dir/build.make CMakeFiles/cmTC_835d9.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_835d9.dir/src.c.o
+/usr/bin/cc -D_GNU_SOURCE  -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes -DBSYMBOLIC_WORKS -fPIE   -o CMakeFiles/cmTC_835d9.dir/src.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_835d9
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_835d9.dir/link.txt --verbose=1
+/usr/bin/cc  -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes -DBSYMBOLIC_WORKS    -rdynamic CMakeFiles/cmTC_835d9.dir/src.c.o  -o cmTC_835d9  -lm -Wl,-Bsymbolic-functions 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+
+	int main (void)
+	{
+	  return 0;
+	}
+	
+Performing C SOURCE FILE Test VERSION_SCRIPT_WORKS succeeded with the following output:
+Change Dir: /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_8d73f/fast && /usr/bin/make -f CMakeFiles/cmTC_8d73f.dir/build.make CMakeFiles/cmTC_8d73f.dir/build
+make[1]: Entering directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8d73f.dir/src.c.o
+/usr/bin/cc -D_GNU_SOURCE  -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes -DVERSION_SCRIPT_WORKS -fPIE   -o CMakeFiles/cmTC_8d73f.dir/src.c.o   -c /home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_8d73f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8d73f.dir/link.txt --verbose=1
+/usr/bin/cc  -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes -DVERSION_SCRIPT_WORKS    -rdynamic CMakeFiles/cmTC_8d73f.dir/src.c.o  -o cmTC_8d73f  -lm -Wl,--version-script,/home/nodog/docs/asp/android_native_win_buff/json-c-build/check-version-script.sym 
+make[1]: Leaving directory '/home/nodog/docs/asp/android_native_win_buff/json-c-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+
+	int main (void)
+	{
+	  return 0;
+	}
+	

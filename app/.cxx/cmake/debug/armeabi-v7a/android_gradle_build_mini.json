@@ -21,7 +21,7 @@
       "abi": "armeabi-v7a",
       "output": "/home/nodog/docs/asp/android_native_win_buff/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-activity.so",
       "runtimeFiles": [
-        "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/armeabi-v7a/libc++.a"
+        "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/armeabi-v7a/libc++.so"
       ]
     }
   }

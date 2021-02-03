@@ -15,11 +15,13 @@
 #include <GLES/gl.h>
 #include "Renderer.h"
 #include "glyphs.h"
+#include "json.hpp"
 
 #include <android/sensor.h>
 #include <android/log.h>
 #include <android_native_app_glue.h>
 #include <android/bitmap.h>
+#include <fstream>
 
 typedef uint16_t color_16bits_t;
 typedef uint8_t  color_8bits_channel_t;
@@ -34,7 +36,7 @@ typedef uint16_t window_pixel_t;
 #define ANDROID_NATIVE_WINDOW_MAGIC ANDROID_NATIVE_MAKE_CONSTANT('_','w','n','d')
 #define ANDROID_NATIVE_BUFFER_MAGIC ANDROID_NATIVE_MAKE_CONSTANT('_','b','f','r')
 
-#define OG
+//#define OG
 
 //quick function that takes some values r g b and manipulates them to get RGB565 result
 #define make565(r,g,b) ( (color_16bits_t) ((r >> 3) << 11) | ((g >> 2) << 5)  | (b >> 3) )
@@ -44,6 +46,7 @@ typedef uint16_t window_pixel_t;
 	typedef enum bool bool;
 #endif
 
+using json = nlohmann::json;
 
 
 /**
@@ -80,11 +83,7 @@ typedef struct android_native_base_t
 } android_native_base_t;
 
 
-
-
-
-coord test[] = {{20, 30}, {20, 50}};
-coord thiscoord = {20, 20};
+coord text_coords[63659] = {};
 
 struct ANativeWindow
 {
@@ -221,20 +220,29 @@ struct ANativeWindow
 };
 //END COPIED DECLARATIONS--------------------------------------------------------------------------------------------------------------
 
-
+//create array of 4 16-bit unsigned ints (will always be same value)
+static color_16bits_t const pixel_colors[PIXEL_COLORS_MAX] = {
+        make565(255,  0,  0), //0b1111100000000000,  //pure red
+        make565(  0,255,  0), //pure green
+        make565(  0,  0,255), //pure blue
+        make565(255,255,  0),
+        make565(255, 255, 255),
+};
 
 int frameNum = 0;
 
 //test cropping rectangle for screen
 android_native_rect_t original {0, 0, 1080, 2280};
-android_native_rect_t test_rect {0, 0, 1080, 2280};
-android_native_rect_t test_rect2 {300, 0, 1080 + 300, 2280};
+android_native_rect_t test_rect {0, 0, 2280, 1080};
 
 //oscillation direction
 int dir = 0;
 
 
+//we want to start the buffer
 int oscillator = 0;
+
+
 window_pixel_t* large_buff; //2462400
 
 //Layer is the most important unit of composition. A layer is a combination of a surface and an instance of SurfaceControl
@@ -254,6 +262,38 @@ static inline uint_fast32_t pixel_colors_next (uint_fast32_t current_index)
     return (rand() & PIXEL_COLORS_MAX_MASK);
 }*/
 
+static void get_txt_coords() {
+    std::ifstream ifs("/system/files/text_coords.json");
+    json jf = json::parse(ifs);
+
+    LOGI("Size is %d\n", (int)jf.size());
+
+    for (int i = 0; i < jf.size(); i++) {
+        text_coords[i].x = (int)jf[i]["x"];
+        text_coords[i].y = (int)jf[i]["y"];
+    }
+
+    LOGI("JSON Success\n");
+}
+
+
+//draw some text on the background
+//draw some text on the background
+//@param x_off - x offset from left of screen where we want to start drawing text
+//@param y_off - y offset from top of screen where we want to start drawing text
+static void drawText(int x_off, int y_off, color_16bits_t text_color, window_pixel_t* bits, int32_t stride) {
+    int initial_adjust = 4452660;
+
+    initial_adjust -= ((y_off - 1) * stride) + x_off;
+
+    //draw text
+    int this_pix;
+    for (auto & text_coord : text_coords) {
+        this_pix = ((text_coord.y - 1) * stride + text_coord.x) - initial_adjust; //first would be 4719600, which is way too big 4608 was 2176
+        bits[this_pix] = text_color;
+    }
+}
+
 #ifdef OG
 //the coord list comes from the basic pixel coordinates found by
 static void fill_pixels(ANativeWindow_Buffer* buffer)
@@ -269,9 +309,7 @@ static void fill_pixels(ANativeWindow_Buffer* buffer)
             make565(255,255,  0)
     };
 
-
     //NOTE***: each pixel takes up 2 bytes in memory, so we need a memory array of 2 * 1080 * 2280
-
 
     //Current pixel colors index
 
@@ -870,54 +908,54 @@ static int32_t engine_handle_input(struct android_app* app, AInputEvent* event) 
  enum {
     // clang-format off
     NATIVE_WINDOW_SET_USAGE                       =  ANATIVEWINDOW_PERFORM_SET_USAGE
-NATIVE_WINDOW_CONNECT                         =  1,
-NATIVE_WINDOW_DISCONNECT                      =  2,
-NATIVE_WINDOW_SET_CROP                        =  3,
-NATIVE_WINDOW_SET_BUFFER_COUNT                =  4,
-        NATIVE_WINDOW_SET_BUFFERS_GEOMETRY            =  ANATIVEWINDOW_PERFORM_SET_BUFFERS_GEOMETRY,
-NATIVE_WINDOW_SET_BUFFERS_TRANSFORM           =  6,
-        NATIVE_WINDOW_SET_BUFFERS_TIMESTAMP           =  7,
-        NATIVE_WINDOW_SET_BUFFERS_DIMENSIONS          =  8,
-        NATIVE_WINDOW_SET_BUFFERS_FORMAT              =  ANATIVEWINDOW_PERFORM_SET_BUFFERS_FORMAT,
-        NATIVE_WINDOW_SET_SCALING_MODE                = 10,
-NATIVE_WINDOW_LOCK                            = 11,
-NATIVE_WINDOW_UNLOCK_AND_POST                 = 12,
-NATIVE_WINDOW_API_CONNECT                     = 13,
-NATIVE_WINDOW_API_DISCONNECT                  = 14,
-NATIVE_WINDOW_SET_BUFFERS_USER_DIMENSIONS     = 15,
-NATIVE_WINDOW_SET_POST_TRANSFORM_CROP         = 16,
-NATIVE_WINDOW_SET_BUFFERS_STICKY_TRANSFORM    = 17,
-NATIVE_WINDOW_SET_SIDEBAND_STREAM             = 18,
-        NATIVE_WINDOW_SET_BUFFERS_DATASPACE           = 19,
-        NATIVE_WINDOW_SET_SURFACE_DAMAGE              = 20,
-NATIVE_WINDOW_SET_SHARED_BUFFER_MODE          = 21,
-        NATIVE_WINDOW_SET_AUTO_REFRESH                = 22,
-        NATIVE_WINDOW_GET_REFRESH_CYCLE_DURATION      = 23,
-        NATIVE_WINDOW_GET_NEXT_FRAME_ID               = 24,
-        NATIVE_WINDOW_ENABLE_FRAME_TIMESTAMPS         = 25,
-        NATIVE_WINDOW_GET_COMPOSITOR_TIMING           = 26,
-        NATIVE_WINDOW_GET_FRAME_TIMESTAMPS            = 27,
-        NATIVE_WINDOW_GET_WIDE_COLOR_SUPPORT          = 28,
-        NATIVE_WINDOW_GET_HDR_SUPPORT                 = 29,
-        NATIVE_WINDOW_SET_USAGE64                     = ANATIVEWINDOW_PERFORM_SET_USAGE64,
-        NATIVE_WINDOW_GET_CONSUMER_USAGE64            = 31,
-        NATIVE_WINDOW_SET_BUFFERS_SMPTE2086_METADATA  = 32,
-        NATIVE_WINDOW_SET_BUFFERS_CTA861_3_METADATA   = 33,
-        NATIVE_WINDOW_SET_BUFFERS_HDR10_PLUS_METADATA = 34,
-        NATIVE_WINDOW_SET_AUTO_PREROTATION            = 35,
-        NATIVE_WINDOW_GET_LAST_DEQUEUE_START          = 36,
-NATIVE_WINDOW_SET_DEQUEUE_TIMEOUT             = 37,
-NATIVE_WINDOW_GET_LAST_DEQUEUE_DURATION       = 38,
-NATIVE_WINDOW_GET_LAST_QUEUE_DURATION         = 39,
-NATIVE_WINDOW_SET_FRAME_RATE                  = 40,
-        NATIVE_WINDOW_SET_CANCEL_INTERCEPTOR          = 41,
-NATIVE_WINDOW_SET_DEQUEUE_INTERCEPTOR         = 42,
-NATIVE_WINDOW_SET_PERFORM_INTERCEPTOR         = 43,
-NATIVE_WINDOW_SET_QUEUE_INTERCEPTOR           = 44,
-NATIVE_WINDOW_ALLOCATE_BUFFERS                = 45,
-NATIVE_WINDOW_GET_LAST_QUEUED_BUFFER          = 46,
-NATIVE_WINDOW_SET_QUERY_INTERCEPTOR           = 47,
-// clang-format on
+    NATIVE_WINDOW_CONNECT                         =  1,
+    NATIVE_WINDOW_DISCONNECT                      =  2,
+    NATIVE_WINDOW_SET_CROP                        =  3,
+    NATIVE_WINDOW_SET_BUFFER_COUNT                =  4,
+    NATIVE_WINDOW_SET_BUFFERS_GEOMETRY            =  ANATIVEWINDOW_PERFORM_SET_BUFFERS_GEOMETRY,
+    NATIVE_WINDOW_SET_BUFFERS_TRANSFORM           =  6,
+    NATIVE_WINDOW_SET_BUFFERS_TIMESTAMP           =  7,
+    NATIVE_WINDOW_SET_BUFFERS_DIMENSIONS          =  8,
+    NATIVE_WINDOW_SET_BUFFERS_FORMAT              =  ANATIVEWINDOW_PERFORM_SET_BUFFERS_FORMAT,
+    NATIVE_WINDOW_SET_SCALING_MODE                = 10,
+    NATIVE_WINDOW_LOCK                            = 11,
+    NATIVE_WINDOW_UNLOCK_AND_POST                 = 12,
+    NATIVE_WINDOW_API_CONNECT                     = 13,
+    NATIVE_WINDOW_API_DISCONNECT                  = 14,
+    NATIVE_WINDOW_SET_BUFFERS_USER_DIMENSIONS     = 15,
+    NATIVE_WINDOW_SET_POST_TRANSFORM_CROP         = 16,
+    NATIVE_WINDOW_SET_BUFFERS_STICKY_TRANSFORM    = 17,
+    NATIVE_WINDOW_SET_SIDEBAND_STREAM             = 18,
+    NATIVE_WINDOW_SET_BUFFERS_DATASPACE           = 19,
+    NATIVE_WINDOW_SET_SURFACE_DAMAGE              = 20,
+    NATIVE_WINDOW_SET_SHARED_BUFFER_MODE          = 21,
+    NATIVE_WINDOW_SET_AUTO_REFRESH                = 22,
+    NATIVE_WINDOW_GET_REFRESH_CYCLE_DURATION      = 23,
+    NATIVE_WINDOW_GET_NEXT_FRAME_ID               = 24,
+    NATIVE_WINDOW_ENABLE_FRAME_TIMESTAMPS         = 25,
+    NATIVE_WINDOW_GET_COMPOSITOR_TIMING           = 26,
+    NATIVE_WINDOW_GET_FRAME_TIMESTAMPS            = 27,
+    NATIVE_WINDOW_GET_WIDE_COLOR_SUPPORT          = 28,
+    NATIVE_WINDOW_GET_HDR_SUPPORT                 = 29,
+    NATIVE_WINDOW_SET_USAGE64                     = ANATIVEWINDOW_PERFORM_SET_USAGE64,
+    NATIVE_WINDOW_GET_CONSUMER_USAGE64            = 31,
+    NATIVE_WINDOW_SET_BUFFERS_SMPTE2086_METADATA  = 32,
+    NATIVE_WINDOW_SET_BUFFERS_CTA861_3_METADATA   = 33,
+    NATIVE_WINDOW_SET_BUFFERS_HDR10_PLUS_METADATA = 34,
+    NATIVE_WINDOW_SET_AUTO_PREROTATION            = 35,
+    NATIVE_WINDOW_GET_LAST_DEQUEUE_START          = 36,
+    NATIVE_WINDOW_SET_DEQUEUE_TIMEOUT             = 37,
+    NATIVE_WINDOW_GET_LAST_DEQUEUE_DURATION       = 38,
+    NATIVE_WINDOW_GET_LAST_QUEUE_DURATION         = 39,
+    NATIVE_WINDOW_SET_FRAME_RATE                  = 40,
+    NATIVE_WINDOW_SET_CANCEL_INTERCEPTOR          = 41,
+    NATIVE_WINDOW_SET_DEQUEUE_INTERCEPTOR         = 42,
+    NATIVE_WINDOW_SET_PERFORM_INTERCEPTOR         = 43,
+    NATIVE_WINDOW_SET_QUEUE_INTERCEPTOR           = 44,
+    NATIVE_WINDOW_ALLOCATE_BUFFERS                = 45,
+    NATIVE_WINDOW_GET_LAST_QUEUED_BUFFER          = 46,
+    NATIVE_WINDOW_SET_QUERY_INTERCEPTOR           = 47,
+    // clang-format on
 };*/
 
 /*FOR REFERENCE
@@ -977,7 +1015,7 @@ static void engine_handle_cmd(struct android_app* app, int32_t cmd) {
 
                 LOGI("INIT_WINDOW: Setting buffer user dimensions to 2x");
                 //set buffer user dimensions (trickles down to initial gralloc allocation request)
-                engine->app->window->perform(engine->app->window, 15, 1080 * 2, 2280 * 2); //2160, 4560
+                engine->app->window->perform(engine->app->window, 15, 2280 * 2, 1080 * 2); //2160, 4560
 #else
 
 
@@ -1002,7 +1040,6 @@ static void engine_handle_cmd(struct android_app* app, int32_t cmd) {
                 LOGI("INIT_WINDOW: calling ANativeWindow_lock()");
 
 
-                //draw square once
                 //make sure we can lock this ANativeWindow_Buffer so that we can edit pixels
                 if (ANativeWindow_lock(engine->app->window, &buffer, nullptr) < 0)
                 {
@@ -1010,31 +1047,21 @@ static void engine_handle_cmd(struct android_app* app, int32_t cmd) {
                     break;
                 }
 
+                //draw text once
+
                 auto* current_pixel = (window_pixel_t *)buffer.bits;
 
-                //for 4x
-                //int index = 6000300;
-
-                //for regular sized
-                //int index = 1231300;
-
-                int index = 2601130;
-
-
-                //fill the raw bits buffer
-                for (int i = 0; i < 300; i++) {
-                    for (int j = 0; j < 300; j++) {
-                        //set this window_pixel_t to red
-                        current_pixel[index++] = make565(255, 0, 0);
-                    }
-                    //index += 788;
-                    //index+=1868;
-                    index += 1876;
+                //draw white background
+                for (int i = 0; i < 1080 * 2280 * 4; i++) {
+                    current_pixel[i] = pixel_colors[4];
                 }
+
+                //draw actual text from the json coords
+                drawText(200, 425, pixel_colors[2], current_pixel, buffer.stride);
 
                 //adjust the crop of the GraphicBuffer
                 LOGI("Calling set crop to crop size of screen\n");
-                engine->app->window->perform(engine->app->window, 3, &original);
+                engine->app->window->perform(engine->app->window, 3, &test_rect);
 
                 //LOGI("INIT_WINDOW: calling ANativeWindow_unlockAndPost()");
                 //release the lock on our window's buffer and post the window to the screen
@@ -1160,73 +1187,7 @@ void android_main(struct android_app* state) {
     //allocate memory on the heap for a window_pixel_t buffer 4x the size of screen
     large_buff = (window_pixel_t *)malloc(sizeof(window_pixel_t) * 2280 * 1080 * 4);
 
-    //statically create the red square
-    //halfway into screen
-    //int index = 1231300;
-
-    //int index = 0;
-
-    //create array of 4 16-bit unsigned ints (will always be same value)
-    static color_16bits_t const pixel_colors[PIXEL_COLORS_MAX] = {
-            make565(255,  0,  0), //0b1111100000000000,  //pure red
-            make565(  0,255,  0), //pure green
-            make565(  0,  0,255), //pure blue
-            make565(255,255,  0),
-            make565(255, 255, 255),
-    };
-
-    /*
-    for (int i = 0; i < 300; i++) {
-        //set this window_pixel_t to 0
-
-        for (int j = 0; j < 300; j++) {
-            large_buff[index++] = pixel_colors[0];
-        }
-
-        //amount to add if we're drawing a square should be (width of screen in pxls - 300 + 8)
-        index += 2004;
-    }*/
-
-    LOGI("testing %d, %d\n", text[2].x, text[2].y);
-
-    //int x, y;
-    //int indx_into_txt = 0;
-
-    /*
-    for (int i = 0; i < 1080*2280*4; i++) {
-        x = i % 4560;
-        y = (i / 2160) | 0;
-
-        //LOGI("x is %d, y is %d\n", x, y);
-
-        if (x==3) {
-            LOGI("FOUND\n");
-        }
-
-        //LOGI("x and y found are %d, %d\n", text[indx_into_txt].x, text[indx_into_txt].y);
-        //LOGI("thiscoord %d, %d\n", thiscoord.x, thiscoord.y);
-
-
-        if (x == text[indx_into_txt].x && y == text[indx_into_txt].y) { //first is (1235, 1034)
-            LOGI("Matched\n");
-            large_buff[i] = pixel_colors[0];
-            indx_into_txt++;
-        }
-
-        //LOGI("size is %d\n", (int)(sizeof(text)/sizeof(text[0])));
-    }*/
-
-    for (int i = 0; i < 1080*2280*4; i++) {
-        large_buff[i] = pixel_colors[4];
-    }
-
-
-    int this_pix;
-    for (int i = 0; i < (int)(sizeof(text) / sizeof(text[0])); i++) {
-        this_pix = (text[i].y - 1) * 4608 + text[i].x - 3533000; //first would be 4719600, which is way too big
-        LOGI("this_pix is %d\n", this_pix);
-        large_buff[this_pix] = pixel_colors[2];
-    }
+    get_txt_coords();
 
     //Next, the program handles events queued by the glue library. The event handler follows the state structure.
 
@@ -1244,7 +1205,6 @@ void android_main(struct android_app* state) {
 
     //assign our engine's "struct android_app" instance as the one that was passed into this function
     engine.app = state;
-
 
     //prep to monitor accelerometer
 

@@ -1,0 +1,350 @@
+Start testing: Feb 02 16:25 EST
+----------------------------------------------------------
+1/23 Testing: test1
+1/23 Test: test1
+Command: "/home/nodog/docs/asp/android_native_win_buff/json-c/tests/test1.test"
+Directory: /home/nodog/docs/asp/android_native_win_buff/json-c-build/tests
+"test1" start time: Feb 02 16:25 EST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   2.40 sec
+----------------------------------------------------------
+Test Passed.
+"test1" end time: Feb 02 16:25 EST
+"test1" time elapsed: 00:00:02
+----------------------------------------------------------
+
+2/23 Testing: test2
+2/23 Test: test2
+Command: "/home/nodog/docs/asp/android_native_win_buff/json-c/tests/test2.test"
+Directory: /home/nodog/docs/asp/android_native_win_buff/json-c-build/tests
+"test2" start time: Feb 02 16:25 EST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   2.34 sec
+----------------------------------------------------------
+Test Passed.
+"test2" end time: Feb 02 16:25 EST
+"test2" time elapsed: 00:00:02
+----------------------------------------------------------
+
+3/23 Testing: test4
+3/23 Test: test4
+Command: "/home/nodog/docs/asp/android_native_win_buff/json-c/tests/test4.test"
+Directory: /home/nodog/docs/asp/android_native_win_buff/json-c-build/tests
+"test4" start time: Feb 02 16:25 EST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.41 sec
+----------------------------------------------------------
+Test Passed.
+"test4" end time: Feb 02 16:25 EST
+"test4" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/23 Testing: testReplaceExisting
+4/23 Test: testReplaceExisting
+Command: "/home/nodog/docs/asp/android_native_win_buff/json-c/tests/testReplaceExisting.test"
+Directory: /home/nodog/docs/asp/android_native_win_buff/json-c-build/tests
+"testReplaceExisting" start time: Feb 02 16:25 EST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.38 sec
+----------------------------------------------------------
+Test Passed.
+"testReplaceExisting" end time: Feb 02 16:25 EST
+"testReplaceExisting" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/23 Testing: test_cast
+5/23 Test: test_cast
+Command: "/home/nodog/docs/asp/android_native_win_buff/json-c/tests/test_cast.test"
+Directory: /home/nodog/docs/asp/android_native_win_buff/json-c-build/tests
+"test_cast" start time: Feb 02 16:25 EST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.43 sec
+----------------------------------------------------------
+Test Passed.
+"test_cast" end time: Feb 02 16:26 EST
+"test_cast" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/23 Testing: test_charcase
+6/23 Test: test_charcase
+Command: "/home/nodog/docs/asp/android_native_win_buff/json-c/tests/test_charcase.test"
+Directory: /home/nodog/docs/asp/android_native_win_buff/json-c-build/tests
+"test_charcase" start time: Feb 02 16:26 EST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.37 sec
+----------------------------------------------------------
+Test Passed.
+"test_charcase" end time: Feb 02 16:26 EST
+"test_charcase" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/23 Testing: test_compare
+7/23 Test: test_compare
+Command: "/home/nodog/docs/asp/android_native_win_buff/json-c/tests/test_compare.test"
+Directory: /home/nodog/docs/asp/android_native_win_buff/json-c-build/tests
+"test_compare" start time: Feb 02 16:26 EST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.38 sec
+----------------------------------------------------------
+Test Passed.
+"test_compare" end time: Feb 02 16:26 EST
+"test_compare" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/23 Testing: test_deep_copy
+8/23 Test: test_deep_copy
+Command: "/home/nodog/docs/asp/android_native_win_buff/json-c/tests/test_deep_copy.test"
+Directory: /home/nodog/docs/asp/android_native_win_buff/json-c-build/tests
+"test_deep_copy" start time: Feb 02 16:26 EST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.44 sec
+----------------------------------------------------------
+Test Passed.
+"test_deep_copy" end time: Feb 02 16:26 EST
+"test_deep_copy" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/23 Testing: test_double_serializer
+9/23 Test: test_double_serializer
+Command: "/home/nodog/docs/asp/android_native_win_buff/json-c/tests/test_double_serializer.test"
+Directory: /home/nodog/docs/asp/android_native_win_buff/json-c-build/tests
+"test_double_serializer" start time: Feb 02 16:26 EST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.38 sec
+----------------------------------------------------------
+Test Passed.
+"test_double_serializer" end time: Feb 02 16:26 EST
+"test_double_serializer" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/23 Testing: test_float
+10/23 Test: test_float
+Command: "/home/nodog/docs/asp/android_native_win_buff/json-c/tests/test_float.test"
+Directory: /home/nodog/docs/asp/android_native_win_buff/json-c-build/tests
+"test_float" start time: Feb 02 16:26 EST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.38 sec
+----------------------------------------------------------
+Test Passed.
+"test_float" end time: Feb 02 16:26 EST
+"test_float" time elapsed: 00:00:00
+----------------------------------------------------------
+
+11/23 Testing: test_int_add
+11/23 Test: test_int_add
+Command: "/home/nodog/docs/asp/android_native_win_buff/json-c/tests/test_int_add.test"
+Directory: /home/nodog/docs/asp/android_native_win_buff/json-c-build/tests
+"test_int_add" start time: Feb 02 16:26 EST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.36 sec
+----------------------------------------------------------
+Test Passed.
+"test_int_add" end time: Feb 02 16:26 EST
+"test_int_add" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/23 Testing: test_json_pointer
+12/23 Test: test_json_pointer
+Command: "/home/nodog/docs/asp/android_native_win_buff/json-c/tests/test_json_pointer.test"
+Directory: /home/nodog/docs/asp/android_native_win_buff/json-c-build/tests
+"test_json_pointer" start time: Feb 02 16:26 EST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.42 sec
+----------------------------------------------------------
+Test Passed.
+"test_json_pointer" end time: Feb 02 16:26 EST
+"test_json_pointer" time elapsed: 00:00:00
+----------------------------------------------------------
+
+13/23 Testing: test_locale
+13/23 Test: test_locale
+Command: "/home/nodog/docs/asp/android_native_win_buff/json-c/tests/test_locale.test"
+Directory: /home/nodog/docs/asp/android_native_win_buff/json-c-build/tests
+"test_locale" start time: Feb 02 16:26 EST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.43 sec
+----------------------------------------------------------
+Test Passed.
+"test_locale" end time: Feb 02 16:26 EST
+"test_locale" time elapsed: 00:00:00
+----------------------------------------------------------
+
+14/23 Testing: test_null
+14/23 Test: test_null
+Command: "/home/nodog/docs/asp/android_native_win_buff/json-c/tests/test_null.test"
+Directory: /home/nodog/docs/asp/android_native_win_buff/json-c-build/tests
+"test_null" start time: Feb 02 16:26 EST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.38 sec
+----------------------------------------------------------
+Test Passed.
+"test_null" end time: Feb 02 16:26 EST
+"test_null" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/23 Testing: test_parse
+15/23 Test: test_parse
+Command: "/home/nodog/docs/asp/android_native_win_buff/json-c/tests/test_parse.test"
+Directory: /home/nodog/docs/asp/android_native_win_buff/json-c-build/tests
+"test_parse" start time: Feb 02 16:26 EST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.47 sec
+----------------------------------------------------------
+Test Passed.
+"test_parse" end time: Feb 02 16:26 EST
+"test_parse" time elapsed: 00:00:00
+----------------------------------------------------------
+
+16/23 Testing: test_parse_int64
+16/23 Test: test_parse_int64
+Command: "/home/nodog/docs/asp/android_native_win_buff/json-c/tests/test_parse_int64.test"
+Directory: /home/nodog/docs/asp/android_native_win_buff/json-c-build/tests
+"test_parse_int64" start time: Feb 02 16:26 EST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.38 sec
+----------------------------------------------------------
+Test Passed.
+"test_parse_int64" end time: Feb 02 16:26 EST
+"test_parse_int64" time elapsed: 00:00:00
+----------------------------------------------------------
+
+17/23 Testing: test_printbuf
+17/23 Test: test_printbuf
+Command: "/home/nodog/docs/asp/android_native_win_buff/json-c/tests/test_printbuf.test"
+Directory: /home/nodog/docs/asp/android_native_win_buff/json-c-build/tests
+"test_printbuf" start time: Feb 02 16:26 EST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.38 sec
+----------------------------------------------------------
+Test Passed.
+"test_printbuf" end time: Feb 02 16:26 EST
+"test_printbuf" time elapsed: 00:00:00
+----------------------------------------------------------
+
+18/23 Testing: test_set_serializer
+18/23 Test: test_set_serializer
+Command: "/home/nodog/docs/asp/android_native_win_buff/json-c/tests/test_set_serializer.test"
+Directory: /home/nodog/docs/asp/android_native_win_buff/json-c-build/tests
+"test_set_serializer" start time: Feb 02 16:26 EST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.40 sec
+----------------------------------------------------------
+Test Passed.
+"test_set_serializer" end time: Feb 02 16:26 EST
+"test_set_serializer" time elapsed: 00:00:00
+----------------------------------------------------------
+
+19/23 Testing: test_set_value
+19/23 Test: test_set_value
+Command: "/home/nodog/docs/asp/android_native_win_buff/json-c/tests/test_set_value.test"
+Directory: /home/nodog/docs/asp/android_native_win_buff/json-c-build/tests
+"test_set_value" start time: Feb 02 16:26 EST
+Output:
+----------------------------------------------------------
+12.300000000000001
+<end of output>
+Test time =   0.41 sec
+----------------------------------------------------------
+Test Passed.
+"test_set_value" end time: Feb 02 16:26 EST
+"test_set_value" time elapsed: 00:00:00
+----------------------------------------------------------
+
+20/23 Testing: test_strerror
+20/23 Test: test_strerror
+Command: "/home/nodog/docs/asp/android_native_win_buff/json-c/tests/test_strerror.test"
+Directory: /home/nodog/docs/asp/android_native_win_buff/json-c-build/tests
+"test_strerror" start time: Feb 02 16:26 EST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.37 sec
+----------------------------------------------------------
+Test Passed.
+"test_strerror" end time: Feb 02 16:26 EST
+"test_strerror" time elapsed: 00:00:00
+----------------------------------------------------------
+
+21/23 Testing: test_util_file
+21/23 Test: test_util_file
+Command: "/home/nodog/docs/asp/android_native_win_buff/json-c/tests/test_util_file.test"
+Directory: /home/nodog/docs/asp/android_native_win_buff/json-c-build/tests
+"test_util_file" start time: Feb 02 16:26 EST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.41 sec
+----------------------------------------------------------
+Test Passed.
+"test_util_file" end time: Feb 02 16:26 EST
+"test_util_file" time elapsed: 00:00:00
+----------------------------------------------------------
+
+22/23 Testing: test_visit
+22/23 Test: test_visit
+Command: "/home/nodog/docs/asp/android_native_win_buff/json-c/tests/test_visit.test"
+Directory: /home/nodog/docs/asp/android_native_win_buff/json-c-build/tests
+"test_visit" start time: Feb 02 16:26 EST
+Output:
+----------------------------------------------------------
+ERROR: invalid return value from json_c_visit userfunc: 100
+<end of output>
+Test time =   0.42 sec
+----------------------------------------------------------
+Test Passed.
+"test_visit" end time: Feb 02 16:26 EST
+"test_visit" time elapsed: 00:00:00
+----------------------------------------------------------
+
+23/23 Testing: test_object_iterator
+23/23 Test: test_object_iterator
+Command: "/home/nodog/docs/asp/android_native_win_buff/json-c/tests/test_object_iterator.test"
+Directory: /home/nodog/docs/asp/android_native_win_buff/json-c-build/tests
+"test_object_iterator" start time: Feb 02 16:26 EST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.42 sec
+----------------------------------------------------------
+Test Passed.
+"test_object_iterator" end time: Feb 02 16:26 EST
+"test_object_iterator" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Feb 02 16:26 EST

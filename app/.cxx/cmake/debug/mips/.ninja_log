@@ -1,12 +1,8 @@
 # ninja log v5
-1	39	1609785648	CMakeFiles/native_app_glue.dir/home/nodog/VENV/opt/android-ndk-r15c/sources/android/native_app_glue/android_native_app_glue.c.o	e82b236c10a244f7
-0	132	1609785648	CMakeFiles/native-activity.dir/Renderer.cpp.o	ccfd75a89b26f905
-39	175	1609785648	libnative_app_glue.a	a56be13063209a91
-0	253	1609785648	CMakeFiles/native-activity.dir/main.cpp.o	4f2d8b2290661da5
-254	305	1609785648	/home/nodog/docs/asp/android_native_win_buff/app/build/intermediates/cmake/debug/obj/mips/libnative-activity.so	a727eb1bf42e472f
-1	218	1609790426	CMakeFiles/native-activity.dir/main.cpp.o	4f2d8b2290661da5
-218	228	1609790426	/home/nodog/docs/asp/android_native_win_buff/app/build/intermediates/cmake/debug/obj/mips/libnative-activity.so	a727eb1bf42e472f
-1	481	1612229770	CMakeFiles/native-activity.dir/main.cpp.o	4f2d8b2290661da5
-481	527	1612229770	/home/nodog/docs/asp/android_native_win_buff/app/build/intermediates/cmake/debug/obj/mips/libnative-activity.so	a727eb1bf42e472f
-0	461	1612249517	CMakeFiles/native-activity.dir/main.cpp.o	4f2d8b2290661da5
-461	473	1612249517	/home/nodog/docs/asp/android_native_win_buff/app/build/intermediates/cmake/debug/obj/mips/libnative-activity.so	a727eb1bf42e472f
+1	39	1612307051	CMakeFiles/native_app_glue.dir/home/nodog/VENV/opt/android-ndk-r15c/sources/android/native_app_glue/android_native_app_glue.c.o	e82b236c10a244f7
+1	156	1612307051	CMakeFiles/native-activity.dir/Renderer.cpp.o	978203c58d63fce9
+39	189	1612307051	libnative_app_glue.a	a56be13063209a91
+0	538	1612307052	CMakeFiles/native-activity.dir/main.cpp.o	a72f0ae2057f00df
+538	553	1612307052	/home/nodog/docs/asp/android_native_win_buff/app/build/intermediates/cmake/debug/obj/mips/libnative-activity.so	924fd7a9f4e68a9c
+0	552	1612307093	CMakeFiles/native-activity.dir/main.cpp.o	a72f0ae2057f00df
+552	564	1612307093	/home/nodog/docs/asp/android_native_win_buff/app/build/intermediates/cmake/debug/obj/mips/libnative-activity.so	924fd7a9f4e68a9c

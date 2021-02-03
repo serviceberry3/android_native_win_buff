@@ -2,5 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/src/main/cpp/json-c" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/json-c" vcs="Git" />
   </component>
 </project>

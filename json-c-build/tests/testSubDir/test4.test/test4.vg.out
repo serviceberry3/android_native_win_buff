@@ -1,0 +1,15 @@
+==54988== Memcheck, a memory error detector
+==54988== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==54988== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==54988== Command: /home/nodog/docs/asp/android_native_win_buff/json-c-build/tests/test4 /home/nodog/docs/asp/android_native_win_buff/json-c/tests
+==54988== Parent PID: 54974
+==54988== 
+==54988== 
+==54988== HEAP SUMMARY:
+==54988==     in use at exit: 0 bytes in 0 blocks
+==54988==   total heap usage: 1,033 allocs, 1,033 frees, 134,250 bytes allocated
+==54988== 
+==54988== All heap blocks were freed -- no leaks are possible
+==54988== 
+==54988== For lists of detected and suppressed errors, rerun with: -s
+==54988== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

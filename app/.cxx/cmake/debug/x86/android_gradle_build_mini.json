@@ -21,7 +21,7 @@
       "abi": "x86",
       "output": "/home/nodog/docs/asp/android_native_win_buff/app/build/intermediates/cmake/debug/obj/x86/libnative-activity.so",
       "runtimeFiles": [
-        "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/x86/libc++.a"
+        "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/x86/libc++.so"
       ]
     }
   }

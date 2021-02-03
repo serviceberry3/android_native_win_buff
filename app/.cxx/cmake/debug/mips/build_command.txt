@@ -1,6 +1,7 @@
 Executable : /home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/cmake
 arguments : 
 -H/home/nodog/docs/asp/android_native_win_buff/app/src/main/cpp
+-DCMAKE_CXX_FLAGS=-std=c++11 -fexceptions
 -DCMAKE_FIND_ROOT_PATH=/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/debug/prefab/mips/prefab
 -DCMAKE_BUILD_TYPE=Debug
 -DCMAKE_TOOLCHAIN_FILE=/home/nodog/VENV/opt/android-ndk-r15c/build/cmake/android.toolchain.cmake
@@ -14,7 +15,7 @@ arguments :
 -DCMAKE_MAKE_PROGRAM=/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja
 -DCMAKE_SYSTEM_NAME=Android
 -DCMAKE_SYSTEM_VERSION=14
--DANDROID_STL=c++_static
+-DANDROID_STL=c++_shared
 -B/home/nodog/docs/asp/android_native_win_buff/app/.cxx/cmake/debug/mips
 -GNinja
 jvmArgs : 
